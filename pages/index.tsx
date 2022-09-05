@@ -21,7 +21,7 @@ import {
   Head,
   LongInformations,
   ShortInformations,
-} from "./_common/_styles";
+} from "../common/indexStyles";
 
 const Home: NextPage = () => {
   return (
