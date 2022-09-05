@@ -16,7 +16,12 @@ import {
   JOBS,
   NON_PROGRAMMING_JOBS,
 } from "common/data";
-import { Contact, Head, LongInformations, ShortInformations } from "./_styles";
+import {
+  Contact,
+  Head,
+  LongInformations,
+  ShortInformations,
+} from "./_common/_styles";
 
 const Home: NextPage = () => {
   return (

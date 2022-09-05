@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
-import { BASE_VARS, DAY_VARS, NIGHT_VARS } from "./_vars";
+import { BASE_VARS, DAY_VARS, NIGHT_VARS } from "./_common/_vars";
 import { MOBILE, SMALL_MOBILE } from "common/consts";
 
 export default createGlobalStyle`
