@@ -103,7 +103,7 @@ export default createGlobalStyle`
     }
   }
 
-  @media (min-width: ${MOBILE + 1}px) {
+  @media print, (min-width: ${MOBILE + 1}px) {
     .only-mobile {
       display: none;
     }

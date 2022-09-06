@@ -7,14 +7,12 @@ export default function ListItem({
   subtitle,
   text,
   level,
-  printMargin,
 }: {
   Component?: React.ElementType;
   title: string;
   subtitle?: string;
   text?: string;
   level?: number;
-  printMargin?: boolean;
 }) {
   const [visible, setVisible] = useState(false);
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -51,7 +49,6 @@ export default function ListItem({
 
   return (
     <Component>
-      {printMargin && <div className="print-page-margin-top" />}
       <Container ref={containerRef}>
         <Title>{title}</Title>
         {subtitle && <Subtitle>{subtitle}</Subtitle>}

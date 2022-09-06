@@ -6,9 +6,10 @@ enum LEVEL {
   L4,
 }
 
-enum CONTACT_TYPE {
+export enum CONTACT_TYPE {
   TEL = "tel",
   EMAIL = "mailto",
+  LINK = "link",
 }
 
 export const PROJECTS = [
@@ -51,17 +52,18 @@ export const PROJECTS = [
     name: "Alephpay - money transaction support application",
     technology: "JavaScript, React",
     dateRange: "06.2018 - 08.2018",
+    printBreakPage: true,
   },
   {
     name: "Versa",
     technology: "JavaScript, React, Designing",
     dateRange: "05.2018 - 06.2018",
+    printMargin: true,
   },
   {
     name: "Bitbay",
     technology: "JavaScript, React",
     dateRange: "04.2018 - 05.2018",
-    printMargin: true,
   },
   {
     name: "Bodychange",
@@ -108,12 +110,18 @@ export const CONTACTS = [
   },
   {
     label: "email",
-    text: "kspacja@gmail",
+    text: "krzysztof.ciach@gmail",
     type: CONTACT_TYPE.EMAIL,
   },
   {
     label: "city",
     text: "Wrocław",
+  },
+  {
+    label: "podcasts",
+    url: "https://www.mixcloud.com/krzysztof-ciach",
+    text: "mixcloud",
+    type: CONTACT_TYPE.LINK,
   },
 ];
 

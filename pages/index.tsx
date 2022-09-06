@@ -35,9 +35,13 @@ const Home: NextPage = () => {
         <Contact>
           <h2 className="only-mobile">Contact</h2>
           <ul>
-            {CONTACTS.map(({ label, text, type }) => (
+            {CONTACTS.map(({ label, text, type, url }) => (
               <InlineListItem key={`${text}-${label}`} label={label}>
-                {type ? <SpecialLink type={type} text={text} /> : text}
+                {type ? (
+                  <SpecialLink type={type} url={url} text={text} />
+                ) : (
+                  text
+                )}
               </InlineListItem>
             ))}
           </ul>
@@ -119,15 +123,28 @@ const Home: NextPage = () => {
           </ul>
           <h3>Project experience</h3>
           <ul>
-            {PROJECTS.map(({ name, technology, dateRange, printMargin }) => (
-              <ListItem
-                key={dateRange}
-                title={name}
-                subtitle={technology}
-                text={dateRange}
-                printMargin={printMargin}
-              />
-            ))}
+            {PROJECTS.map(
+              ({
+                name,
+                technology,
+                dateRange,
+                printMargin,
+                printBreakPage,
+              }) => (
+                <>
+                  {printMargin && (
+                    <div className="print-page-margin-top-small" />
+                  )}
+                  <ListItem
+                    key={dateRange}
+                    title={name}
+                    subtitle={technology}
+                    text={dateRange}
+                  />
+                  {printBreakPage && <div className="print-page-break" />}
+                </>
+              )
+            )}
           </ul>
         </LongInformations>
         <div className="clear" />
