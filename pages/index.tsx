@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import NextHead from "next/head";
 import ListItem from "components/ListItem";
 import NightSwitch from "components/NightSwitch/index";
 import InlineListItem from "components/InlineListItem";
@@ -26,6 +27,9 @@ import {
 const Home: NextPage = () => {
   return (
     <CanvasWrapper>
+      <NextHead>
+        <title>Krzysztof Ciach | Resume website</title>
+      </NextHead>
       <NightSwitch />
       <Canvas>
         <Contact>

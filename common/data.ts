@@ -1,4 +1,3 @@
-import ListItem from "components/ListItem";
 enum LEVEL {
   L0,
   L1,
@@ -24,7 +23,7 @@ export const PROJECTS = [
     dateRange: "01.2020 - 02.2022",
   },
   {
-    name: "Express Marketing polls application for IPSOS",
+    name: "Express Marketing polls application",
     technology: "JavaScript, TypeScript, React, NestJS (Node.js), PHP",
     dateRange: "10.2020 - 01.2022",
   },
@@ -216,7 +215,7 @@ export const JOBS = [
 export const NON_PROGRAMMING_JOBS = [
   {
     company: "Academic Radio LUZ",
-    role: "Speaker, member of music and culture deparment, author of Polonez show",
+    role: "Speaker, member of music and culture department, author of Polonez show",
     dateRange: "10.2015 - till now",
   },
   {

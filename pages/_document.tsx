@@ -20,6 +20,7 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=DM+Serif+Display&display=swap"
             rel="stylesheet"
           />
+          <link rel="icon" type="image/x-icon" href="/favicon-day.ico" />
         </Head>
         <body>
           <Main />

@@ -4,8 +4,19 @@ import Moon from "./moon.svg";
 
 import { Button } from "./styles";
 
+type TimeOfDay = "night" | "day" | null;
+
+function setFavicon(timeOfDay: TimeOfDay) {
+  const faviconLink =
+    document.querySelector<HTMLLinkElement>('link[rel="icon"]');
+
+  if (faviconLink && timeOfDay) {
+    faviconLink.href = `/favicon-${timeOfDay}.ico`;
+  }
+}
+
 export default function NightSwitch() {
-  const [timeOfDay, setTimeOfDay] = useState<"day" | "night" | null>(null);
+  const [timeOfDay, setTimeOfDay] = useState<TimeOfDay>(null);
   const defferTimeOfDay = useDeferredValue(timeOfDay);
 
   useEffect(() => {
@@ -25,12 +36,13 @@ export default function NightSwitch() {
 
   useEffect(() => {
     document.body.className = defferTimeOfDay || "";
+    setFavicon(defferTimeOfDay);
   }, [defferTimeOfDay]);
 
   const buzzRef = useRef<HTMLAudioElement>(null);
   const switchRef = useRef<HTMLAudioElement>(null);
 
-  const turnAudio = (state: "day" | "night" | null) => {
+  const turnAudio = (state: TimeOfDay) => {
     if (!buzzRef.current || !switchRef.current || !state) {
       return;
     }
