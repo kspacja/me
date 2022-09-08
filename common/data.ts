@@ -163,7 +163,7 @@ export const SKILLS = [
     level: LEVEL.L4,
   },
   {
-    name: "CSS in JS",
+    name: "CSS-in-JS",
     level: LEVEL.L4,
   },
   {
