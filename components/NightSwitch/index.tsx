@@ -6,6 +6,29 @@ import { Button } from "./styles";
 
 type TimeOfDay = "night" | "day" | null;
 
+function useNightSounds() {
+  const buzzRef = useRef<HTMLAudioElement>(null);
+  const switchRef = useRef<HTMLAudioElement>(null);
+
+  const turnAudio = (state: TimeOfDay) => {
+    if (!buzzRef.current || !switchRef.current || !state) {
+      return;
+    }
+
+    switchRef.current.volume = 0.1;
+    switchRef.current.play();
+    if (state === "day") {
+      buzzRef.current.volume = 0.1;
+      buzzRef.current.play();
+    } else {
+      buzzRef.current.pause();
+      buzzRef.current.currentTime = 0;
+    }
+  };
+
+  return [buzzRef, switchRef, turnAudio] as const;
+}
+
 function setFavicon(timeOfDay: TimeOfDay) {
   const faviconLink =
     document.querySelector<HTMLLinkElement>('link[rel="icon"]');
@@ -39,24 +62,7 @@ export default function NightSwitch() {
     setFavicon(defferTimeOfDay);
   }, [defferTimeOfDay]);
 
-  const buzzRef = useRef<HTMLAudioElement>(null);
-  const switchRef = useRef<HTMLAudioElement>(null);
-
-  const turnAudio = (state: TimeOfDay) => {
-    if (!buzzRef.current || !switchRef.current || !state) {
-      return;
-    }
-
-    switchRef.current.volume = 0.1;
-    switchRef.current.play();
-    if (state === "day") {
-      buzzRef.current.volume = 0.1;
-      buzzRef.current.play();
-    } else {
-      buzzRef.current.pause();
-      buzzRef.current.currentTime = 0;
-    }
-  };
+  const [buzzRef, switchRef, turnAudio] = useNightSounds();
 
   return (
     <>
