@@ -69,6 +69,9 @@ export default function NightSwitch() {
             return state === "day" ? "night" : "day";
           });
         }}
+        aria-label={
+          defferTimeOfDay === "day" ? "Switch to night" : "Switch to day"
+        }
       >
         {defferTimeOfDay === "day" ? (
           <Sun width="30" height="30" />
