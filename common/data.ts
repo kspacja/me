@@ -202,7 +202,7 @@ export const SKILLS = [
 
 export const LANGS = [
   { name: "Polish", level: "Native" },
-  { name: "English", level: "Very good" },
+  { name: "English", level: "Advanced" },
 ];
 
 export const INTERESTS = ["Music", "Radio", "Cocktail making", "Pop culture"];
