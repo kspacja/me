@@ -5,6 +5,8 @@ import NightSwitch from "components/NightSwitch/index";
 import InlineListItem from "components/InlineListItem";
 import { SpecialLink } from "components/SpecialLink";
 import { Canvas, CanvasWrapper } from "components/Canvas";
+import BarLine from "components/BarLine";
+import ProjectDesc from "components/ProjectDesc";
 
 import {
   FREELANCE,
@@ -22,7 +24,7 @@ import {
   Head,
   LongInformations,
   ShortInformations,
-} from "../common/indexStyles";
+} from "common/indexStyles";
 
 const Home: NextPage = () => {
   return (
@@ -76,7 +78,9 @@ const Home: NextPage = () => {
           <h2>Skills</h2>
           <ul className="print-page-break">
             {SKILLS.map(({ name, level }) => (
-              <ListItem key={name} title={name} level={level} />
+              <ListItem key={name} title={name}>
+                <BarLine level={level} />
+              </ListItem>
             ))}
           </ul>
           <h2 className="print-page-margin-top-small">Interests</h2>
@@ -128,6 +132,7 @@ const Home: NextPage = () => {
                 name,
                 technology,
                 dateRange,
+                role,
                 printMargin,
                 printBreakPage,
               }) => (
@@ -140,7 +145,9 @@ const Home: NextPage = () => {
                     title={name}
                     subtitle={technology}
                     text={dateRange}
-                  />
+                  >
+                    <ProjectDesc>{role}</ProjectDesc>
+                  </ListItem>
                   {printBreakPage && <div className="print-page-break" />}
                 </>
               )
