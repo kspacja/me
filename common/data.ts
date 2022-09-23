@@ -16,19 +16,19 @@ export const PROJECTS = [
   {
     name: "Indigo App - parking application",
     technology: "JavaScript, React, Redux",
-    role: "Single member of front-end team, most working with legacy code, kanban managed.",
+    role: "Single member of front-end team, working mostly with legacy code, kanban managed.",
     dateRange: "02.2022 - till now",
   },
   {
     name: "EveryPay SDK",
     technology: "JavaScript, TypeScript",
-    role: "Single-men self-managed project with a need to create 3 parts development enviroment to simulate 3-host system, which have to communicate cross-domain. Target was to create it as stand-alone library.",
+    role: "One-man self-managed project, that required to maintain multihost development and production enviroments which communicate with each other on a cross-domain basis. Target was to create it as stand-alone library.",
     dateRange: "01.2020 - 02.2022",
   },
   {
     name: "Express Marketing polls application",
     technology: "JavaScript, TypeScript, React, GraphQL, NestJS (Node.js), PHP",
-    role: "Scrum managed project advanced architecture. I was member of front-end team, where I had to develop back-end too (in PHP as well). From time to time I took responsiblity of team-leader. On daily basis I had help junior with developing.",
+    role: "Scrum managed project with advanced architecture. I was member of front-end team, where I was developing back-end too (in PHP as well). From time to time I took responsiblity of team-leader. On daily basis I was helping juniors with developing.",
     dateRange: "10.2020 - 01.2022",
   },
   {
@@ -40,7 +40,7 @@ export const PROJECTS = [
   {
     name: "EAI CS/O&O - Automotive website with machine learning",
     technology: "JavaScript, React",
-    role: "Single member of front-end team, where I had to build video-centered application from scratch. Scrum managed.",
+    role: "Single member of front-end team, where I was building video-centered application from scratch. Scrum managed.",
     dateRange: "01.2020 - 08.2020",
     printBreakPage: true,
   },
@@ -54,7 +54,7 @@ export const PROJECTS = [
   {
     name: "Alerabat - content management and website widget",
     technology: "JavaScript, React",
-    role: "Single member of front-end team. Application was devided to two parts: widget, which have to work standalone and CMS to manage it.",
+    role: "Single member of front-end team. Application was divided into two parts: widget, which have to work standalone and CMS to manage it.",
     dateRange: "08.2018 - 02.2019",
   },
   {
@@ -102,19 +102,19 @@ export const PROJECTS = [
   {
     name: "AmSpace for AmRest",
     technology: "JavaScript, React",
-    role: "Short-term member of front-end team. In that time I build well-performed calendar with possibility to set and managed events.",
+    role: "Short-term member of front-end team. In that time I built well-performed calendar with possibility to set and managed events.",
     dateRange: "01.2017 - 03.2017",
   },
   {
     name: "Sonel - manufacturer of measuring instruments",
     technology: "JavaScript, React",
-    role: "Member of front-end team. On daily basis I had help junior with developing.",
+    role: "Member of front-end team. On daily basis I was helping junior with developing.",
     dateRange: "02.2016 - 12.2016",
   },
   {
     name: "SympatiaPlus - top Polish dating website",
     technology: "JavaScript, React, Python, Django",
-    role: "Member of front-end team. Project required a lot of developer-designed part of application.",
+    role: "Member of front-end team. Project required developers to also design graphics and UX parts of the application.",
     dateRange: "09.2014 - 01.2016",
   },
 ];
