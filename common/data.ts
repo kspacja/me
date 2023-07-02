@@ -127,7 +127,7 @@ export const CONTACTS = [
   },
   {
     label: "email",
-    text: "krzysztof.ciach@gmail",
+    text: "krzysztof.ciach@gmail.com",
     type: CONTACT_TYPE.EMAIL,
   },
   {
