@@ -162,4 +162,20 @@ export default createGlobalStyle`
       clear: both;
     }
   }
+
+  .mt-0 {
+    margin-top: 0;
+  }
+
+  .mt-1 {
+    margin-top: 1rem;
+  }
+
+  .mb-0 {
+    margin-bottom: 0;
+  }
+
+  .mb-1 {
+    margin-bottom: 1rem;
+  }
 `;

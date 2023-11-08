@@ -2,6 +2,8 @@ import GlobalStyles from "common/globalStyles";
 import StyledComponentsRegistry from "lib/styled-component-registry";
 
 import { DM_Sans, DM_Serif_Display } from "next/font/google";
+import NightSwitch from "components/NightSwitch/index";
+import { Canvas, CanvasWrapper } from "components/Canvas";
 
 // If loading a variable font, you don't need to specify the font weight
 const dmSans = DM_Sans({
@@ -28,7 +30,10 @@ export default function RootLayout({
       <body>
         <StyledComponentsRegistry>
           <GlobalStyles />
-          {children}
+          <CanvasWrapper>
+            <NightSwitch />
+            <Canvas>{children}</Canvas>
+          </CanvasWrapper>
         </StyledComponentsRegistry>
       </body>
     </html>

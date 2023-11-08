@@ -13,6 +13,14 @@ export const firstRow = css`
   }
 `;
 
+export const LayoutLeftColumn = styled(LeftColumn)`
+  padding-top: 4rem;
+`;
+
+export const LayoutRightColumn = styled(RightColumn)`
+  padding-top: 4rem;
+`;
+
 export const Contact = styled(LeftColumn)`
   ${firstRow}
 
