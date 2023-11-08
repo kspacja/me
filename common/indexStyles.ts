@@ -1,3 +1,5 @@
+"use client";
+
 import styled, { css } from "styled-components";
 
 import { MOBILE, SMALL_MOBILE } from "common/consts";

@@ -1,6 +1,8 @@
+"use client";
+
 import { createGlobalStyle } from "styled-components";
 
-import { BASE_VARS, DAY_VARS, NIGHT_VARS } from "../common/vars";
+import { BASE_VARS, DAY_VARS, NIGHT_VARS } from "./vars";
 import { MOBILE, SMALL_MOBILE } from "common/consts";
 
 export default createGlobalStyle`

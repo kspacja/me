@@ -1,8 +1,10 @@
+"use client";
+
 import styled from "styled-components";
 import { MOBILE } from "common/consts";
 import { LeftColumn } from "components/Columns";
 
-export const Bar = styled.div<{ visible: boolean; level: number }>`
+export const Bar = styled.div<{ visible: string; level: number }>`
   height: 0.2rem;
   margin: 0.2rem 0 0.7rem;
   width: 80%;
@@ -34,7 +36,8 @@ export const Bar = styled.div<{ visible: boolean; level: number }>`
   }
 
   &:after {
-    width: ${(props) => (props.visible ? ((props.level + 1) / 5) * 100 : 0)}%;
+    width: ${(props) =>
+      props.visible === "true" ? ((props.level + 1) / 5) * 100 : 0}%;
     transition: width ease 2s;
 
     ${LeftColumn} & {

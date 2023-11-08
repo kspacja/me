@@ -46,8 +46,8 @@ export const DAY_VARS = `
 `;
 
 export const BASE_VARS = `
-  --font: 'DM Sans', sans-serif;
-  --heading-font: 'DM Serif Display', serif;
+  --font: var(--dm-sans-font);
+  --heading-font: var(--dm-serif-display-font);
 
   --font-size-l: 1.1rem;
   --font-size-s: 0.8rem;

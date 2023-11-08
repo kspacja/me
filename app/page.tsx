@@ -1,5 +1,3 @@
-import type { NextPage } from "next";
-import NextHead from "next/head";
 import ListItem from "components/ListItem";
 import NightSwitch from "components/NightSwitch/index";
 import InlineListItem from "components/InlineListItem";
@@ -25,13 +23,15 @@ import {
   LongInformations,
   ShortInformations,
 } from "common/indexStyles";
+import { Metadata } from "next";
 
-const Home: NextPage = () => {
+export const metadata: Metadata = {
+  title: "Krzysztof Ciach - Resume page",
+};
+
+const Home = () => {
   return (
     <CanvasWrapper>
-      <NextHead>
-        <title>Krzysztof Ciach | Resume website</title>
-      </NextHead>
       <NightSwitch />
       <Canvas>
         <Contact>

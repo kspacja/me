@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from "react";
 import { Bar } from "./styles";
 
@@ -35,5 +37,5 @@ export default function BarLine({ level }: { level: number }) {
     };
   }, []);
 
-  return <Bar ref={containerRef} visible={visible} level={level} />;
+  return <Bar ref={containerRef} visible={visible.toString()} level={level} />;
 }

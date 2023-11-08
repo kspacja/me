@@ -1,4 +1,3 @@
-import { useEffect, useRef, useState } from "react";
 import { Subtitle, Title, Text, Container } from "./styles";
 
 export default function ListItem({

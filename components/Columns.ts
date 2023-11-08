@@ -1,3 +1,5 @@
+"use client";
+
 import { SMALL_MOBILE, MOBILE } from "common/consts";
 import styled from "styled-components";
 import { neonText, neonTextH1 } from "common/stylingUtils";

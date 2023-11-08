@@ -1,3 +1,5 @@
+"use client";
+
 import { CONTACT_TYPE } from "common/data";
 
 export function SpecialLink({
