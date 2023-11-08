@@ -1,8 +1,8 @@
 "use client";
 
 import { useDeferredValue, useEffect, useRef, useState } from "react";
-// import Sun from "./sun.svg";
-// import Moon from "./moon.svg";
+import Sun from "./sun.svg";
+import Moon from "./moon.svg";
 
 import { Button } from "./styles";
 
@@ -60,9 +60,9 @@ export default function NightSwitch() {
   }, []);
 
   useEffect(() => {
-    // if (defferTimeOfDay) {
-    //   document.body.classList.add(defferTimeOfDay);
-    // }
+    if (defferTimeOfDay) {
+      document.body.className = defferTimeOfDay;
+    }
 
     setFavicon(defferTimeOfDay);
   }, [defferTimeOfDay]);
@@ -84,11 +84,11 @@ export default function NightSwitch() {
           defferTimeOfDay === "day" ? "Switch to night" : "Switch to day"
         }
       >
-        {/* {defferTimeOfDay === "day" ? (
+        {defferTimeOfDay === "day" ? (
           <Sun width="30" height="30" />
         ) : (
           <Moon width="30" height="30" />
-        )} */}
+        )}
       </Button>
     </>
   );
