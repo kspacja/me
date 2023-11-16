@@ -188,5 +188,9 @@ export default createGlobalStyle`
 
       list-style-position: inside;
     }
+
+    img {
+      max-width: 100%;
+    }
   }
 `;
