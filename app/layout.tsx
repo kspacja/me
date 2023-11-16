@@ -1,6 +1,7 @@
 import GlobalStyles from "common/globalStyles";
 import StyledComponentsRegistry from "lib/styled-component-registry";
 
+import { Metadata } from "next";
 import { DM_Sans, DM_Serif_Display } from "next/font/google";
 import NightSwitch from "components/NightSwitch/index";
 import { Canvas, CanvasWrapper } from "components/Canvas";
@@ -17,6 +18,13 @@ const dmSerifDisplay = DM_Serif_Display({
   weight: "400",
   variable: "--dm-serif-display-font",
 });
+
+export const metadata: Metadata = {
+  title: {
+    default: "Krzysztof Ciach - Resume page",
+    template: "%s | Krzysztof Ciach",
+  },
+};
 
 export default function RootLayout({
   children,

@@ -22,11 +22,6 @@ import {
   LongInformations,
   ShortInformations,
 } from "common/indexStyles";
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Krzysztof Ciach - Resume page",
-};
 
 const Home = () => {
   return (

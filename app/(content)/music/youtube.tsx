@@ -17,8 +17,9 @@ export default function YouTube({
   const { containerRef, visible } = useInView();
 
   if (visible && !iframeSrc) {
-    console.log("visible");
-    setSrc(src);
+    const [id] = src.match(/([^=/]+)$/) ?? [];
+
+    setSrc(id ? `https://www.youtube.com/embed/${id}` : src);
   }
 
   return (

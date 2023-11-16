@@ -178,4 +178,15 @@ export default createGlobalStyle`
   .mb-1 {
     margin-bottom: 1rem;
   }
+
+  .page {
+    line-height: 1.5;
+
+    ol {
+      padding-left: 0;
+      margin-left: 0;
+
+      list-style-position: inside;
+    }
+  }
 `;

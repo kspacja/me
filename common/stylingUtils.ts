@@ -5,18 +5,18 @@ import { keyframes } from "styled-components";
 export function neonText(color: string) {
   return `
     text-shadow:
-      .1em .1em 0 hsl(var(--white-hsl) / 0.2),
-      0 0 15px var(--white),
-      0 0 102px ${color};
+      .1em .1em 0 hsl(var(--white-hsl) / 0.1),
+      0 0 8px var(--white),
+      0 0 52px ${color};
   `;
 }
 
 export function neonTextH1(color: string) {
   return `
     text-shadow:
-      .05em .05em 0 hsl(var(--white-hsl) / 0.2),
-      0 0 30px var(--white),
-      0 0 102px ${color};
+      .05em .05em 0 hsl(var(--white-hsl) / 0.1),
+      0 0 15px var(--white),
+      0 0 52px ${color};
   `;
 }
 
