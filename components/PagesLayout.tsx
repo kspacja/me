@@ -10,7 +10,7 @@ export default function pageLayout(backUrl: string) {
         <br />
         {children}
         <br />
-        <Link href="#">&uarr; top</Link> | <Link href={backUrl}>&lt; back</Link>
+        <Link href="#">&uarr; top</Link> | <BackLink parentHref={backUrl} />
       </>
     );
   };
