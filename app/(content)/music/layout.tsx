@@ -19,9 +19,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <h2 className="mb-0">music stuff</h2>
         <ul>
           <li>
-            <Link href="/music/articles">articles</Link>
-          </li>
-          <li>
             <Link href="/music/lists">lists</Link>
           </li>
           <li>

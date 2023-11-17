@@ -8,7 +8,7 @@ export default function YouTube({
   subtitle,
   src,
 }: {
-  title: string;
+  title?: string;
   subtitle?: string;
   src: string;
 }) {
@@ -25,7 +25,7 @@ export default function YouTube({
   return (
     <>
       <br />
-      <h4>{title}</h4>
+      {title && <h4>{title}</h4>}
       {subtitle && <h5>{subtitle}</h5>}
       <div ref={containerRef}>
         <iframe
