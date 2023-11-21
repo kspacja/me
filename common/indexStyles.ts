@@ -19,6 +19,12 @@ export const LayoutLeftColumn = styled(LeftColumn)`
 
 export const LayoutRightColumn = styled(RightColumn)`
   padding-top: 4rem;
+
+  @media screen and (max-width: ${MOBILE}px) {
+    .night & {
+      padding-top: 0rem;
+    }
+  }
 `;
 
 export const Contact = styled(LeftColumn)`
