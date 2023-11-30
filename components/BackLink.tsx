@@ -6,7 +6,9 @@ import { useSelectedLayoutSegments } from "next/navigation";
 export default function BackLink({ parentHref }: { parentHref: string }) {
   const segments = useSelectedLayoutSegments();
 
-  const parentSegments = segments.slice(0, -1);
+  const parentSegments = segments
+    .filter((seg) => !seg.startsWith("("))
+    .slice(0, -1);
 
   const backUrl = `${parentHref}/${parentSegments.join("/")}`;
 
