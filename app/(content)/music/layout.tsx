@@ -8,6 +8,20 @@ export const metadata: Metadata = {
     default: "music stuff",
     template: "%s | music stuff | Krzysztof Ciach",
   },
+  description:
+    "music stuff by Krzysztof Ciach. Features, lists, playlists, articles about my favorite music.",
+  keywords: [
+    "music",
+    "lists",
+    "artists",
+    "favorites",
+    "features",
+    "playlists",
+    "articles",
+  ],
+  alternates: {
+    canonical: process.env.NEXT_PUBLIC_SITE_URL + "/music",
+  },
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
