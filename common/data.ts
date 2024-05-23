@@ -14,10 +14,34 @@ export enum CONTACT_TYPE {
 
 export const PROJECTS = [
   {
+    name: "Strivee - gym management system",
+    technology: "Typescript, React, Next.js",
+    role: "Tech leader of front-end team",
+    dateRange: "01.2024 - till now",
+  },
+  {
+    name: "Shipping management system",
+    technology: "Typescript, React, Next.js",
+    role: "Member of front-end team.",
+    dateRange: "05.2023 - 11.2023",
+  },
+  {
+    name: "Zadd 910ths - business data raporting, analysis and visualization for Saudi Arabia",
+    technology: "Typescript, React, Google Maps API",
+    role: "Member of front-end team with leading responsiblities. Project required to work with Arabic language and right-to-left layout.",
+    dateRange: "01.2023 - 04.2023",
+  },
+  {
+    name: "Application for discounts",
+    technology: "JavaScript, React, Web-Components, LitElement",
+    role: "Member of front-end small team.",
+    dateRange: "09.2022 - 12.2022",
+  },
+  {
     name: "Indigo App - parking application",
     technology: "JavaScript, React, Redux",
     role: "Single member of front-end team, working mostly with legacy code, kanban managed.",
-    dateRange: "02.2022 - till now",
+    dateRange: "02.2022 - 06.2022",
   },
   {
     name: "EveryPay SDK",
@@ -148,6 +172,11 @@ export const FREELANCE = [
     technology: "JavaScript, Wordpress, PHP",
     dateRange: "09.2018 - 04.2019 and 04.2022 - till now",
   },
+  {
+    name: "Website for Herosi Fundation - with ecommerce and blog",
+    technology: "JavaScript, NextJS, Strapi, MedusaJS",
+    dateRange: "06.2023 - 04.2024",
+  },
 ];
 
 export const EDUCATIONS = [
@@ -172,8 +201,8 @@ export const SKILLS = [
     level: LEVEL.L3,
   },
   {
-    name: "WordPress",
-    level: LEVEL.L2,
+    name: "Next.js",
+    level: LEVEL.L3,
   },
   {
     name: "CSS3",
@@ -226,9 +255,14 @@ export const INTERESTS = ["Music", "Radio", "Cocktail making", "Pop culture"];
 
 export const JOBS = [
   {
+    company: "Boldare",
+    role: "Senior front-end developer",
+    dateRange: "01.2023 - till now",
+  },
+  {
     company: "DOOK S.A.",
     role: "Senior front-end developer",
-    dateRange: "08.2014 - till now",
+    dateRange: "08.2014 - 12.2023",
   },
   {
     company: "IIZT",
