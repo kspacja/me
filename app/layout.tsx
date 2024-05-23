@@ -20,9 +20,17 @@ const dmSerifDisplay = DM_Serif_Display({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://ciachu.site/"
+  ),
   title: {
     default: "Krzysztof Ciach - Resume page",
     template: "%s | Krzysztof Ciach",
+  },
+  description: "Krzysztof Ciach - Web Developer - Resume page",
+  keywords: ["web developer", "resume", "portfolio", "cv", "krzysztof ciach"],
+  alternates: {
+    canonical: process.env.NEXT_PUBLIC_SITE_URL ?? "https://ciachu.site/",
   },
 };
 
