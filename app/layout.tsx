@@ -5,6 +5,7 @@ import { Metadata } from "next";
 import { DM_Sans, DM_Serif_Display } from "next/font/google";
 import NightSwitch from "components/NightSwitch/index";
 import { Canvas, CanvasWrapper } from "components/Canvas";
+import { navigationMenuLD, pageLD } from "./json-ld";
 
 // If loading a variable font, you don't need to specify the font weight
 const dmSans = DM_Sans({
@@ -44,6 +45,12 @@ export default function RootLayout({
   return (
     <html lang="pl" className={className}>
       <body>
+      <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([pageLD, navigationMenuLD]),
+          }}
+        />
         <StyledComponentsRegistry>
           <GlobalStyles />
           <CanvasWrapper>
