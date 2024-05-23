@@ -15,6 +15,7 @@ export const firstRow = css`
 
 export const LayoutLeftColumn = styled(LeftColumn)`
   padding-top: 4rem;
+  min-height: 100vh;
 `;
 
 export const LayoutRightColumn = styled(RightColumn)`
