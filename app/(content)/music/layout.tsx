@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     "articles",
   ],
   alternates: {
-    canonical: process.env.NEXT_PUBLIC_SITE_URL + "/music",
+    canonical: process.env.NEXT_PUBLIC_SITE_URL + "music",
   },
 };
 
