@@ -28,8 +28,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <LayoutLeftColumn>
-        <h2 className="mb-0">Krzysztof Ciach&apos;s</h2>
-        <h4>personal website</h4>
+        <Link href="/">
+          <h2 className="mb-0">Krzysztof Ciach&apos;s</h2>
+          <h4>personal website</h4>
+        </Link>
         <h2 className="mb-0">music stuff</h2>
         <ul>
           <li>
