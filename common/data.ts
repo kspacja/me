@@ -168,14 +168,19 @@ export const CONTACTS = [
 
 export const FREELANCE = [
   {
-    name: "Website for Academic Radio LUZ from Wrocław",
-    technology: "JavaScript, Wordpress, PHP",
-    dateRange: "09.2018 - 04.2019 and 04.2022 - till now",
+    name: "Website with the recent polish music - nowy-polonez.pl",
+    technology: "JavaScript, Next.js, web canvas, Spotify API",
+    dateRange: "06.2023 - 04.2024",
   },
   {
     name: "Website for Herosi Fundation - with ecommerce and blog",
-    technology: "JavaScript, NextJS, Strapi, MedusaJS",
+    technology: "JavaScript, Next.js, Strapi, MedusaJS",
     dateRange: "06.2023 - 04.2024",
+  },
+  {
+    name: "Website for Academic Radio LUZ from Wrocław",
+    technology: "JavaScript, Wordpress, PHP",
+    dateRange: "09.2018 - 04.2019 and 04.2022 - till now",
   },
 ];
 
