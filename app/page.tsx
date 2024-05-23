@@ -38,6 +38,9 @@ const Home = () => {
           <li className="mt-1">
             <a href="/music">music stuff</a>
           </li>
+          <li>
+            <a href="/movies">movies stuff</a>
+          </li>
         </ul>
       </Contact>
       <Head>
