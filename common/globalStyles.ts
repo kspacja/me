@@ -144,6 +144,10 @@ export default createGlobalStyle`
       font-size: 12px;
     }
 
+    h1 {
+      font-size: 3.5rem;
+    }
+
     .print-page-break {
       page-break-after: always;
     }
@@ -160,6 +164,14 @@ export default createGlobalStyle`
       height: 1px;
       width: 100%;
       clear: both;
+    }
+
+    .print-hide {
+      display: none;
+    }
+
+    .print-columns {
+      columns: 2;
     }
   }
 

@@ -35,10 +35,10 @@ const Home = () => {
             </InlineListItem>
           ))}
 
-          <li className="mt-1">
+          <li className="mt-1 print-hide">
             <a href="/music">music stuff</a>
           </li>
-          <li>
+          <li className="print-hide">
             <a href="/movies">movies stuff</a>
           </li>
         </ul>
@@ -87,28 +87,30 @@ const Home = () => {
       </ShortInformations>
       <LongInformations>
         <h2>Experience</h2>
-        <h3>Work experience</h3>
-        <ul>
-          {JOBS.map(({ company, role, dateRange }) => (
-            <ListItem
-              key={`${company}-${dateRange}`}
-              title={company}
-              subtitle={role}
-              text={dateRange}
-            />
-          ))}
-        </ul>
-        <h3>Non-programming work experience</h3>
-        <ul>
-          {NON_PROGRAMMING_JOBS.map(({ company, role, dateRange }) => (
-            <ListItem
-              key={`${company}-${dateRange}`}
-              title={company}
-              subtitle={role}
-              text={dateRange}
-            />
-          ))}
-        </ul>
+        <div className="print-columns">
+          <h3>Work experience</h3>
+          <ul>
+            {JOBS.map(({ company, role, dateRange }) => (
+              <ListItem
+                key={`${company}-${dateRange}`}
+                title={company}
+                subtitle={role}
+                text={dateRange}
+              />
+            ))}
+          </ul>
+          <h3>Non-programming work experience</h3>
+          <ul>
+            {NON_PROGRAMMING_JOBS.map(({ company, role, dateRange }) => (
+              <ListItem
+                key={`${company}-${dateRange}`}
+                title={company}
+                subtitle={role}
+                text={dateRange}
+              />
+            ))}
+          </ul>
+        </div>
         <h3>Freelance project experience</h3>
         <ul className="print-break">
           {FREELANCE.map(({ name, technology, dateRange }) => (

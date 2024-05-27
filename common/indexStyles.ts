@@ -39,6 +39,21 @@ export const Contact = styled(LeftColumn)`
   @media screen and (max-width: ${SMALL_MOBILE}px) {
     padding-bottom: 0rem;
   }
+
+  @media print {
+    position: relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 90%;
+      left: 0;
+      right: 0;
+      height: 75px;
+      z-index: 5;
+      background-color: var(--left-column-bg);
+    }
+  }
 `;
 
 export const Head = styled(RightColumn)`

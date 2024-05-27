@@ -12,11 +12,20 @@ export enum CONTACT_TYPE {
   LINK = "link",
 }
 
-export const PROJECTS = [
+export interface Project {
+  name: string;
+  technology: string;
+  role: string;
+  dateRange: string;
+  printMargin?: boolean;
+  printBreakPage?: boolean;
+}
+
+export const PROJECTS: Project[] = [
   {
     name: "Strivee - gym management system",
     technology: "Typescript, React, Next.js",
-    role: "Tech leader of front-end team",
+    role: "Tech leader of front-end team (scrum managed). Pixel-pefect requirement from client",
     dateRange: "01.2024 - till now",
   },
   {
@@ -60,20 +69,19 @@ export const PROJECTS = [
     technology: "JavaScript, React",
     role: "Short-term member of front-end team.",
     dateRange: "08.2020 - 10.2020",
+    printMargin: true,
   },
   {
     name: "EAI CS/O&O - Automotive website with machine learning",
     technology: "JavaScript, React",
     role: "Single member of front-end team, where I was building video-centered application from scratch. Scrum managed.",
     dateRange: "01.2020 - 08.2020",
-    printBreakPage: true,
   },
   {
     name: "Femtasy - website with erotic audio stories for woman",
     technology: "JavaScript, React",
     role: "Member of front-end small team. Project required to work with audio streams.",
     dateRange: "02.2019 - 01.2020",
-    printMargin: true,
   },
   {
     name: "Alerabat - content management and website widget",
@@ -218,24 +226,12 @@ export const SKILLS = [
     level: LEVEL.L4,
   },
   {
-    name: "PHP",
-    level: LEVEL.L1,
-  },
-  {
     name: "Node.js",
     level: LEVEL.L2,
   },
   {
     name: "HTML5",
     level: LEVEL.L4,
-  },
-  {
-    name: "Webpack",
-    level: LEVEL.L3,
-  },
-  {
-    name: "Python",
-    level: LEVEL.L0,
   },
   {
     name: "SQL",

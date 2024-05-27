@@ -59,7 +59,7 @@ export const LeftColumn = styled(Column)`
       content: "";
       background: var(--left-column-bg);
       position: absolute;
-      top: 100%;
+      top: 99%;
       left: 0;
       right: 0;
       height: 110vh;
