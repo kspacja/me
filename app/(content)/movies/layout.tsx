@@ -9,9 +9,6 @@ export const metadata: Metadata = {
     template: "%s | movies stuff | Krzysztof Ciach",
   },
   description: "movies stuff by Krzysztof Ciach.",
-  alternates: {
-    canonical: process.env.NEXT_PUBLIC_SITE_URL + "movies",
-  },
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {

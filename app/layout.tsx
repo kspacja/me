@@ -30,9 +30,6 @@ export const metadata: Metadata = {
   },
   description: "Krzysztof Ciach - Web Developer - Resume page",
   keywords: ["web developer", "resume", "portfolio", "cv", "krzysztof ciach"],
-  alternates: {
-    canonical: process.env.NEXT_PUBLIC_SITE_URL ?? "https://ciachu.site/",
-  },
 };
 
 export default function RootLayout({
@@ -45,7 +42,7 @@ export default function RootLayout({
   return (
     <html lang="pl" className={className}>
       <body>
-      <script
+        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify([pageLD, navigationMenuLD]),

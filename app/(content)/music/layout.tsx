@@ -19,9 +19,6 @@ export const metadata: Metadata = {
     "playlists",
     "articles",
   ],
-  alternates: {
-    canonical: process.env.NEXT_PUBLIC_SITE_URL + "music",
-  },
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
