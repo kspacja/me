@@ -177,12 +177,12 @@ export const CONTACTS = [
 export const FREELANCE = [
   {
     name: "Website with the recent polish music - nowy-polonez.pl",
-    technology: "JavaScript, Next.js, web canvas, Spotify API",
+    technology: "JavaScript, Next.js, web canvas, Spotify API, ffmpeg",
     dateRange: "06.2023 - 04.2024",
   },
   {
     name: "Website for Herosi Fundation - with ecommerce and blog",
-    technology: "JavaScript, Next.js, Strapi, MedusaJS",
+    technology: "JavaScript, Next.js, Strapi, MedusaJS, Docker, Vercel",
     dateRange: "06.2023 - 04.2024",
   },
   {
@@ -244,6 +244,10 @@ export const SKILLS = [
   {
     name: "Photoshop",
     level: LEVEL.L3,
+  },
+  {
+    name: "Docker",
+    level: LEVEL.L1,
   },
 ];
 
