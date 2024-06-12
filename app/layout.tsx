@@ -30,6 +30,11 @@ export const metadata: Metadata = {
   },
   description: "Krzysztof Ciach - Web Developer - Resume page",
   keywords: ["web developer", "resume", "portfolio", "cv", "krzysztof ciach"],
+  openGraph: {
+    siteName: "Krzysztof Ciach - Resume page",
+    type: "website",
+    title: "Krzysztof Ciach - Resume page",
+  },
 };
 
 export default function RootLayout({
