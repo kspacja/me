@@ -6,15 +6,17 @@ export default function ListItem({
   subtitle,
   text,
   children,
+  className,
 }: {
   Component?: React.ElementType;
   title: string;
   subtitle?: string;
   text?: string;
   children?: React.ReactNode;
+  className?: string;
 }) {
   return (
-    <Component>
+    <Component className={className}>
       <Container>
         <Title>{title}</Title>
         {subtitle && <Subtitle>{subtitle}</Subtitle>}

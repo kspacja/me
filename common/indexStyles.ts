@@ -31,6 +31,8 @@ export const LayoutRightColumn = styled(RightColumn)`
 export const Contact = styled(LeftColumn)`
   ${firstRow}
 
+  line-height: 1.3;
+
   @media screen and (max-width: ${MOBILE}px) {
     grid-row: 2;
     padding-bottom: 0rem;

@@ -1,4 +1,13 @@
-const withMDX = require("@next/mdx")();
+import rehypeHighlight from "rehype-highlight";
+import createMDX from "@next/mdx";
+
+const withMDX = createMDX({
+  extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: [],
+    rehypePlugins: [rehypeHighlight],
+  },
+});
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -36,4 +45,4 @@ const nextConfig = {
   },
 };
 
-module.exports = withMDX(nextConfig);
+export default withMDX(nextConfig);

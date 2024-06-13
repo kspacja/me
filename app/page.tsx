@@ -35,6 +35,9 @@ const Home = () => {
             </InlineListItem>
           ))}
 
+          {/* <li className="mt-1 print-hide">
+            <a href="/programming">programming stuff</a>
+          </li> */}
           <li className="mt-1 print-hide">
             <a href="/music">music stuff</a>
           </li>
@@ -119,6 +122,7 @@ const Home = () => {
               title={name}
               subtitle={technology}
               text={dateRange}
+              className="mb-05"
             />
           ))}
         </ul>

@@ -19,6 +19,7 @@ export const Column = styled.section`
 
 export const LeftColumn = styled(Column)`
   text-align: right;
+  font-weight: 300;
 
   background: var(--left-column-bg);
   color: var(--left-column-color);

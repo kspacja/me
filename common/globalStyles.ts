@@ -53,9 +53,15 @@ export default createGlobalStyle`
     font-size: 2rem;
   }
 
+  h3 {
+    font-size: 1.5rem;
+  }
+
   a {
     color: inherit;
     text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 1px;
 
     &:hover {
       text-decoration: none;
@@ -141,7 +147,7 @@ export default createGlobalStyle`
     body,
     input,
     textarea {
-      font-size: 12px;
+      font-size: 10px;
     }
 
     h1 {
@@ -185,6 +191,10 @@ export default createGlobalStyle`
 
   .mb-0 {
     margin-bottom: 0;
+  }
+
+  .mb-05 {
+    margin-bottom: 0.5rem;
   }
 
   .mb-1 {

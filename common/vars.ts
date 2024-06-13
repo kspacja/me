@@ -25,10 +25,10 @@ export const NIGHT_VARS = `
 `;
 
 export const DAY_VARS = `
-  --background: var(--redish-grey);
-  --canvas: var(--linen);
-  --left-column-bg: var(--cedar-chest);
-  --left-column-color: var(--maximum-yellow-red);
+  --background: #e5e5e5;
+  --canvas: #fffaf9;
+  --left-column-bg: #000000;
+  --left-column-color: #fca311;
   --font-color: var(--black);
 
   --body-background-image: none;
@@ -39,8 +39,8 @@ export const DAY_VARS = `
 
   --night-shadow: var(--neon-pink);
 
-  --night-switch-bg: var(--cedar-chest);
-  --night-switch-color: var(--maximum-yellow-red);
+  --night-switch-bg: var(--left-column-bg);
+  --night-switch-color: var(--left-column-color);
 
   --canvas-shadow: var(--shadow-elevation-medium);
 `;
@@ -49,9 +49,9 @@ export const BASE_VARS = `
   --font: var(--dm-sans-font);
   --heading-font: var(--dm-serif-display-font);
 
-  --font-size-l: 1.1rem;
-  --font-size-s: 0.8rem;
-  --font-size-xs: 0.7rem;
+  --font-size-l: 1.2rem;
+  --font-size-s: 1.0rem;
+  --font-size-xs: 0.8rem;
 
   --mobile: ${MOBILE}px;
   --mobile-s: ${SMALL_MOBILE}px;

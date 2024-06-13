@@ -6,6 +6,8 @@ import styled from "styled-components";
 
 export const Title = styled.div`
   font-size: var(--font-size-l);
+  font-weight: 500;
+  margin-bottom: 0.15rem;
 `;
 
 export const Subtitle = styled.div`
@@ -28,5 +30,5 @@ export const Container = styled.div`
     }
   }
 
-  padding-bottom: 0.5rem;
+  padding-bottom: 0.9rem;
 `;

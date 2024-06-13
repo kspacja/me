@@ -33,25 +33,25 @@ export const Canvas = styled.div`
 export const CanvasWrapper = styled.div`
   position: relative;
 
-  &:before {
-    content: "";
-    display: var(--canvas-wrapper-shadow-display);
-    position: absolute;
-    max-width: 300px;
-    margin: auto;
+  // &:before {
+  //   content: "";
+  //   display: var(--canvas-wrapper-shadow-display);
+  //   position: absolute;
+  //   max-width: 300px;
+  //   margin: auto;
 
-    left: 0;
-    right: 0;
-    top: 3rem;
-    bottom: 20%;
+  //   left: 0;
+  //   right: 0;
+  //   top: 3rem;
+  //   bottom: 20%;
 
-    background: hsl(var(--shadow-color) / 1);
-    filter: blur(8px);
+  //   background: hsl(var(--shadow-color) / 1);
+  //   filter: blur(8px);
 
-    transform: skew(7deg) translate(-140%, 0);
+  //   transform: skew(7deg) translate(-140%, 0);
 
-    @media screen and (max-width: ${MOBILE}px) {
-      display: none;
-    }
-  }
+  //   @media screen and (max-width: ${MOBILE}px) {
+  //     display: none;
+  //   }
+  // }
 `;

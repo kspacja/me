@@ -2,21 +2,21 @@ import GlobalStyles from "common/globalStyles";
 import StyledComponentsRegistry from "lib/styled-component-registry";
 
 import { Metadata } from "next";
-import { DM_Sans, DM_Serif_Display } from "next/font/google";
+import { Outfit } from "next/font/google";
 import NightSwitch from "components/NightSwitch/index";
 import { Canvas, CanvasWrapper } from "components/Canvas";
 import { navigationMenuLD, pageLD } from "./json-ld";
 
 // If loading a variable font, you don't need to specify the font weight
-const dmSans = DM_Sans({
+const dmSans = Outfit({
   subsets: ["latin"],
   display: "swap",
   variable: "--dm-sans-font",
 });
 
-const dmSerifDisplay = DM_Serif_Display({
+const dmSerifDisplay = Outfit({
   subsets: ["latin"],
-  weight: "400",
+  weight: "700",
   variable: "--dm-serif-display-font",
 });
 

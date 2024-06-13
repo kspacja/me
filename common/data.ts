@@ -63,6 +63,7 @@ export const PROJECTS: Project[] = [
     technology: "JavaScript, TypeScript, React, GraphQL, NestJS (Node.js), PHP",
     role: "Scrum managed project with advanced architecture. I was member of front-end team, where I was developing back-end too (in PHP as well). From time to time I took responsiblity of team-leader. On daily basis I was helping juniors with developing.",
     dateRange: "10.2020 - 01.2022",
+    printBreakPage: true,
   },
   {
     name: "Notable - schools, courses supporting application",
@@ -256,7 +257,7 @@ export const LANGS = [
   { name: "English", level: "Advanced" },
 ];
 
-export const INTERESTS = ["Music", "Radio", "Cocktail making", "Pop culture"];
+export const INTERESTS = ["Music", "Radio", "Pop culture"];
 
 export const JOBS = [
   {
