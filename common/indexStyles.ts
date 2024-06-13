@@ -15,7 +15,10 @@ export const firstRow = css`
 
 export const LayoutLeftColumn = styled(LeftColumn)`
   padding-top: 4rem;
-  min-height: 100vh;
+
+  @media screen and (min-width: ${MOBILE}px) {
+    min-height: 100vh;
+  }
 `;
 
 export const LayoutRightColumn = styled(RightColumn)`
