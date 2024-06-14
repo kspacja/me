@@ -63,8 +63,35 @@ export default createGlobalStyle`
     text-underline-offset: 2px;
     text-decoration-thickness: 1px;
 
-    &:hover {
+
+    &:hover, &:hover code {
       text-decoration: none;
+    }
+
+    code {
+      text-decoration: underline;
+    }
+
+    &.hash-link {
+      text-decoration: none;
+
+      &:hover {
+        h1:after,
+        h2:after,
+        h3:after,
+        h4:after,
+        h5:after,
+        h6:after {
+          content: " #";
+          font-size: 0.8em;
+          opacity: 0.45;
+          margin-left: 0.1em;
+
+          position: relative;
+          top: -0.1em;
+        }
+        
+      }
     }
   }
 
@@ -91,6 +118,47 @@ export default createGlobalStyle`
 
   path {
     fill: currentColor;
+  }
+
+  code {
+    color: var(--code-color);
+    background: var(--code-background);
+    font-size: 0.8em;
+    padding: 0.2em 0.3em;
+    border-radius: 3px;
+  }
+
+  pre {
+    text-wrap: pretty;
+
+    @media (max-width: ${MOBILE}px) {
+      font-size: 0.8em;
+    }
+
+    @media (max-width: ${SMALL_MOBILE}px) {
+      font-size: 0.7em;
+    }
+  }
+  
+  .contents {
+    border-top: 1px solid rgba(255, 255, 255, 0.6);
+    padding-top: 1rem;
+    margin-top: 2.5rem;
+    
+    font-size: 1.3em;
+
+    h3 {
+      margin-bottom: 0.7rem;
+    }
+    
+    & > ul > li {
+      margin-bottom: 0.7rem;
+    }
+
+    li > ul {
+      font-size: 0.7em;
+      padding-bottom: 0;
+    }
   }
 
   * {
@@ -209,6 +277,13 @@ export default createGlobalStyle`
       margin-left: 0;
 
       list-style-position: inside;
+    }
+
+    ul {
+      list-style-type: disc;
+      list-style-position: inside;
+      
+      padding-left: 1em;
     }
 
     img {

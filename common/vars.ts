@@ -22,6 +22,9 @@ export const NIGHT_VARS = `
                    0 0 10px var(--night-shadow),
                    0 0 15px var(--night-shadow),
                    0 0 35px var(--night-shadow);
+
+  --code-color: var(--black);
+  --code-background: var(--neon-blue);
 `;
 
 export const DAY_VARS = `
@@ -43,6 +46,9 @@ export const DAY_VARS = `
   --night-switch-color: var(--left-column-color);
 
   --canvas-shadow: var(--shadow-elevation-medium);
+
+  --code-color: var(--left-column-color);
+  --code-background: var(--left-column-bg);
 `;
 
 export const BASE_VARS = `

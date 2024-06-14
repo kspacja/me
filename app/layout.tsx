@@ -7,6 +7,8 @@ import NightSwitch from "components/NightSwitch/index";
 import { Canvas, CanvasWrapper } from "components/Canvas";
 import { navigationMenuLD, pageLD } from "./json-ld";
 
+import "common/code.css";
+
 // If loading a variable font, you don't need to specify the font weight
 const dmSans = Outfit({
   subsets: ["latin"],

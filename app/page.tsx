@@ -35,10 +35,10 @@ const Home = () => {
             </InlineListItem>
           ))}
 
-          {/* <li className="mt-1 print-hide">
-            <a href="/programming">programming stuff</a>
-          </li> */}
           <li className="mt-1 print-hide">
+            <a href="/programing">programing stuff</a>
+          </li>
+          <li className="print-hide">
             <a href="/music">music stuff</a>
           </li>
           <li className="print-hide">
@@ -102,7 +102,7 @@ const Home = () => {
               />
             ))}
           </ul>
-          <h3>Non-programming work experience</h3>
+          <h3>Non-programing work experience</h3>
           <ul>
             {NON_PROGRAMMING_JOBS.map(({ company, role, dateRange }) => (
               <ListItem
