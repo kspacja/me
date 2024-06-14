@@ -3,11 +3,30 @@ import { LayoutRightColumn, LayoutLeftColumn } from "common/indexStyles";
 import ContentsTable from "components/ContentsTable";
 import Link from "next/link";
 
+const metaKeywords = [
+  "react",
+  "typescript",
+  "react-hook-form",
+  "zod",
+  "form",
+  "form reusability",
+  "complex forms",
+  "schema validation",
+  "useformcontext",
+  "type inference",
+  "component refactoring",
+  "strong typing",
+  "developer experience",
+  "form handling best practices",
+  "field reusability",
+  "form schema",
+  "generic components",
+];
+
 export const metadata: Metadata = {
-  title: {
-    template: "% | programing stuff | Krzysztof Ciach",
-    default: "programing stuff | Krzysztof Ciach",
-  },
+  title:
+    "How to reuse groups of fields / fieldsets of a complex form in React with TypeScript and react-hook-form. | programing stuff ",
+  keywords: metaKeywords,
 };
 
 export default function Layout({

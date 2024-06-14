@@ -19,16 +19,33 @@ export default function ContentsTable({
     const observer = new IntersectionObserver(
       ([entry]) => {
         el.style.position = entry.isIntersecting ? "fixed" : "static";
-        // keep the same width as the parent minus the padding
 
-        el.style.width = `${el.parentElement!.clientWidth}px`;
+        const parent = el.parentElement!;
+
+        el.style.width = `${parent.clientWidth}px`;
       },
       { threshold: 0 }
     );
 
+    const handleScroll = () => {
+      const parent = el.parentElement!;
+      const parentBottom = parent.getBoundingClientRect().bottom;
+
+      if (parentBottom < 0) {
+        el.style.top = `0px`;
+      } else {
+        el.style.top = `${parentBottom}px`;
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
     observer.observe(el);
 
-    return () => observer.disconnect();
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      observer.disconnect();
+    };
   }, []);
 
   return (
