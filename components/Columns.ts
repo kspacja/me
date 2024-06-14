@@ -66,6 +66,12 @@ export const LeftColumn = styled(Column)`
       height: 110vh;
     }
   }
+
+  .list-item {
+    @media (min-width: ${MOBILE + 1}px) {
+        align-items: flex-end;
+      }
+  } 
 `;
 
 export const RightColumn = styled(Column)`

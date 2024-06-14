@@ -24,11 +24,5 @@ export const Container = styled.div`
 
   break-inside: avoid;
 
-  ${LeftColumn} & {
-    @media (min-width: ${MOBILE + 1}px) {
-      align-items: flex-end;
-    }
-  }
-
   padding-bottom: 0.9rem;
 `;

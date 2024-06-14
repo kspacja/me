@@ -17,7 +17,7 @@ export default function ListItem({
 }) {
   return (
     <Component className={className}>
-      <Container>
+      <Container className="list-item">
         <Title>{title}</Title>
         {subtitle && <Subtitle>{subtitle}</Subtitle>}
         {text && <Text>{text}</Text>}

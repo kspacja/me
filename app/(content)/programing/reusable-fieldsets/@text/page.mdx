@@ -237,11 +237,11 @@ export default function CheckoutForm() {
 ```
 
 Ok. It looks better now, but here's a problem - we cannot reuse `AddressFields` in `ProfileForm` because it's strongly typed by `CheckoutForm`.
-We can fix by more generic type of context (which hard to type), but what if someone would like to use `AddressFields` in a form flat structure or more nested in components tree?
+We can fix by more generic type for `useFormContext` (which hard to type), but what if someone would like to use `AddressFields` in a flat structured form or more nested in components tree?
 
 <H level={3}> My solution</H>
 
-First of all, I try to think how to make `AddressFields` "knowing" nothing about the form structure. I can pass `register` function as a prop
+First of all, I tried to figure out how to make `AddressFields` "knows" nothing about the form structure. I can pass `register` function as a prop
 and custom `register` function should be simplified and typed to <b>not</b> form schema, but only to the fieldset schema.
 
 ```tsx
@@ -337,17 +337,17 @@ export default function CheckoutForm() {
 
 ```
 
-That simple! Notice with if `AddressFields` would change in the future, form itself doesn't have to be adjusted.
+That simple! Notice that if `AddressFields` would be changed in the future, form itself doesn't have to be adjusted.
 
 <H level={3}>Sum up!</H>
 
-In this article, we explore how to reuse groups of form fields in a React application using TypeScript
+In this article, we explored how to reuse groups of form fields in a React application using TypeScript
 and `react-hook-form`, while maintaining strong typing and a good developer experience.
 
 <H level={4}>Key Steps:</H>
 
 1. Define Schemas: Create a schema for address fields and forms using zod.
-2. Make component generic and independent of form structure by passing custom register function as a prop.
+2. Make component generic and independent from form structure by passing custom register function as a prop.
 3. Pass register function to the component from the form.
 
 <H level={3}>Conclusion</H>
