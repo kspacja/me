@@ -237,7 +237,7 @@ export default function CheckoutForm() {
 ```
 
 Ok. It looks better now, but here's a problem - we cannot reuse `AddressFields` in `ProfileForm` because it's strongly typed by `CheckoutForm`.
-We can fix by more generic type for `useFormContext` (which hard to type), but what if someone would like to use `AddressFields` in a flat structured form or more nested in components tree?
+We can fix that by a more generic type for useFormContext. But what if one would like to go with AddressFields in a flat structure (schema) of a form or in a deeply nested components tree?
 
 <H level={3}> My solution</H>
 
@@ -356,4 +356,4 @@ It's a great way to keep your code DRY, easy to read and separated concerns. Als
 
 You can use this approach for form errors as well. It is suitable for more nested forms.
 
-PS. I've also used above approach with Mantine library form.
+PS. I've also used the above approach with Mantine library form.
