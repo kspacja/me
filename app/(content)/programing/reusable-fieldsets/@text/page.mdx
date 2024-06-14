@@ -9,7 +9,7 @@ and you want to keep strong typing and good developer experience - like autocomp
 
 <H level={3}>A case</H>
 
-You have a small e-commerce app, where client during checkout need to fill address form, but also can
+You have a small e-commerce app, where a client during checkout needs to fill address form, but also can
 provide diffrent address for billing. You want to reuse address form for billing address.
 
 Also you realised it would be great to reuse address form for user profile form.
@@ -154,8 +154,8 @@ export default function CheckoutForm() {
 
 ```
 
-It works, but it's not DRY, hard to read and if would like to make ui more fancy for address fields. You would need to change it in multiple places.
-We can extract address fields to a separate component and as documentation of `react-hook-form` we can use [`useFormContext`](https://react-hook-form.com/docs/useformcontext).
+It works, but violates DRY, is hard to read and if would like to make ui more fancy for address fields, you would need to change it in multiple places.
+We can extract address fields to a separate component and as documentation of `react-hook-form` suggests we can use [`useFormContext`](https://react-hook-form.com/docs/useformcontext).
 
 <H level={4}>First refactor</H>
 
