@@ -46,12 +46,17 @@ export default function NightSwitch() {
 
   useEffect(() => {
     const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+    const storedTimeOfDay = sessionStorage.getItem(
+      "timeOfDay"
+    ) as TimeOfDay | null;
 
     const handleChange = (e: MediaQueryListEvent) => {
       setTimeOfDay(e.matches ? "night" : "day");
     };
 
-    setTimeOfDay(prefersDarkScheme.matches ? "night" : "day");
+    setTimeOfDay(
+      storedTimeOfDay ?? (prefersDarkScheme.matches ? "night" : "day")
+    );
     prefersDarkScheme.addEventListener("change", handleChange);
 
     return () => {
@@ -77,7 +82,11 @@ export default function NightSwitch() {
         onClick={() => {
           setTimeOfDay((state) => {
             turnAudio(state);
-            return state === "day" ? "night" : "day";
+            const nextState = state === "day" ? "night" : "day";
+
+            sessionStorage.setItem("timeOfDay", nextState);
+
+            return nextState;
           });
         }}
         aria-label={
