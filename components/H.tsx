@@ -2,7 +2,11 @@ export default function H({
   level,
   children,
   id = typeof children === "string"
-    ? children.replace(/\s+/g, "-").toLowerCase()
+    ? children
+        .trim()
+        .replace(/\s+/g, "-")
+        .replace(/[!#%$&*]/g, "")
+        .toLowerCase()
     : undefined,
 }: {
   level: 1 | 2 | 3 | 4 | 5 | 6;
