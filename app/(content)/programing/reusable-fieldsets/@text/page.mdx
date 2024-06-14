@@ -236,7 +236,7 @@ export default function CheckoutForm() {
 
 ```
 
-Ok. It looks better now, but here's a problem - we cannot reuse `AddressFields` in `ProfileForm` because it's strongly typed to `CheckoutForm`.
+Ok. It looks better now, but here's a problem - we cannot reuse `AddressFields` in `ProfileForm` because it's strongly typed by `CheckoutForm`.
 We can fix by more generic type of context (which hard to type), but what if someone would like to use `AddressFields` in a form flat structure or more nested in components tree?
 
 <H level={3}> My solution</H>
