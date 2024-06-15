@@ -279,7 +279,7 @@ export default createGlobalStyle`
       list-style-position: inside;
     }
 
-    ul {
+    .styled-list ul {
       list-style-type: disc;
       list-style-position: inside;
       
@@ -290,4 +290,6 @@ export default createGlobalStyle`
       max-width: 100%;
     }
   }
+  
+
 `;

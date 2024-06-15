@@ -27,6 +27,14 @@ export const metadata: Metadata = {
   title:
     "How to reuse groups of fields / fieldsets of a complex form in React with TypeScript and react-hook-form. | programing stuff ",
   keywords: metaKeywords,
+  openGraph: {
+    title: "Reuable form fieldsets?",
+    description:
+      "How to reuse groups of fields / fieldsets of a complex form in React with TypeScript and react-hook-form.",
+    siteName: "Krzysztof Ciach's personal website",
+    type: "article",
+    locale: "en_US",
+  },
 };
 
 export default function Layout({
