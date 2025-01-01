@@ -184,7 +184,7 @@ export const FREELANCE = [
   {
     name: "Website for Herosi Fundation - with ecommerce and blog",
     technology: "JavaScript, Next.js, Strapi, MedusaJS, Docker, Vercel",
-    dateRange: "06.2023 - 04.2024",
+    dateRange: "06.2023 - 11.2024",
   },
   {
     name: "Website for Academic Radio LUZ from Wrocław",

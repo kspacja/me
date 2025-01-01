@@ -13,7 +13,9 @@ const withMDX = createMDX({
 const nextConfig = {
   pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
   reactStrictMode: true,
-  swcMinify: true,
+  compiler: {
+    styledComponents: true,
+  },
   webpack(config) {
     // https://react-svgr.com/docs/next/
 

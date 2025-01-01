@@ -39,7 +39,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </li>
         </ul>
       </LayoutLeftColumn>
-      <LayoutRightColumn className="page">{children}</LayoutRightColumn>
+      <LayoutRightColumn className="page">
+        {children}
+      </LayoutRightColumn>
     </>
   );
 }

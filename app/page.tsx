@@ -22,6 +22,7 @@ import {
   LongInformations,
   ShortInformations,
 } from "common/indexStyles";
+import { Fragment } from "react";
 
 const Home = () => {
   return (
@@ -137,10 +138,10 @@ const Home = () => {
               printMargin,
               printBreakPage,
             }) => (
-              <>
+              <Fragment key={dateRange}>
                 {printMargin && <div className="print-page-margin-top-small" />}
                 <ListItem
-                  key={dateRange}
+                  
                   title={name}
                   subtitle={technology}
                   text={dateRange}
@@ -148,7 +149,7 @@ const Home = () => {
                   <ProjectDesc>{role}</ProjectDesc>
                 </ListItem>
                 {printBreakPage && <div className="print-page-break" />}
-              </>
+              </Fragment>
             )
           )}
         </ul>
