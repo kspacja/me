@@ -106,7 +106,7 @@ export default createGlobalStyle`
     cursor: pointer;
   }
 
-  ul {
+  ul:not(.list), {
     list-style: none;
     padding: 0 0 1rem;
     margin: 0;
