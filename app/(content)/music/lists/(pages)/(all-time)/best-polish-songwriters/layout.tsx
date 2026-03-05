@@ -13,6 +13,11 @@ export const metadata: Metadata = {
     "polska piosenka",
     "piosenki",
   ],
+  openGraph: {
+    siteName: "Krzysztof Ciach - Resume page",
+    type: "website",
+    title: "Najlepsi polscy piosenkopisarze i pisarki",
+  },
 };
 
 export default PassThrough;
