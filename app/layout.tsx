@@ -55,6 +55,7 @@ export default function RootLayout({
             __html: JSON.stringify([pageLD, navigationMenuLD]),
           }}
         />
+        <script defer src="https://cloud.umami.is/script.js" data-website-id="af366b65-2793-4cd7-8934-d65eaa4be7b9"></script>
         <StyledComponentsRegistry>
           <GlobalStyles />
           <CanvasWrapper>
