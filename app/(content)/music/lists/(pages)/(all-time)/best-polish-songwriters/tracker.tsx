@@ -40,7 +40,6 @@ export default function Tracker() {
     document.querySelectorAll('a').forEach(a => {
       if (a.host !== window.location.host && !a.getAttribute('data-umami-event')) {
         a.setAttribute('data-umami-event', 'external-link');
-        a.setAttribute('data-umami-event-url', a.href);
         a.setAttribute('data-umami-event-caption', a.textContent || a.href);
 
         a.addEventListener('click', (e) => {
@@ -54,6 +53,7 @@ export default function Tracker() {
           // youtube
           if (a.href.includes('youtube.com/watch')) {
             e.preventDefault();
+            e.stopPropagation();
 
             const videoId = a.href.split('v=')[1].split('&')[0];
 
@@ -68,6 +68,7 @@ export default function Tracker() {
           // tidal
           if (a.href.includes('tidal.com/track')) {
             e.preventDefault();
+            e.stopPropagation();
 
             // https://tidal.com/track/32588932/u
             const trackId = a.href.split('/track/')[1].split('/')[0]
