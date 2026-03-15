@@ -64,6 +64,8 @@ export default function Tracker() {
               height: '180',
               allow: 'autoplay; encrypted-media'
             });
+
+            return false;
           }
 
           // tidal
@@ -81,6 +83,8 @@ export default function Tracker() {
               height: '120',
               allow: 'encrypted-media'
             });
+
+            return false;
           }
         });
       }
