@@ -97,7 +97,7 @@ export default function Tracker() {
     // add default wrapper with simple message about youtube links
     const defaultWrapper = document.createElement('div');
     defaultWrapper.className = 'yt-default-wrapper';
-    defaultWrapper.innerHTML = 'Gdy klikniesz w link do piosenki (YouTube lub Tidal), pojawi się okienko z utworem bez opuszczania strony.<div class="yt-default-wrapper-note"> Może cały czas otworzyć w nowej karcie - to zależy od Twojej decyzji :)</div>';
+    defaultWrapper.innerHTML = 'Gdy klikniesz w link do piosenki (YouTube lub Tidal), pojawi się okienko z utworem bez opuszczania strony.<div class="yt-default-wrapper-note"> Możesz cały czas otworzyć w nowej karcie - to zależy od Twojej decyzji :)</div>';
     document.body.appendChild(defaultWrapper);
     openedWrapper = defaultWrapper;
 
