@@ -41,8 +41,9 @@
   left: 0;
   z-index: 10000;
 
-  background-color: var(--left-column-color);
-  color: var(--left-column-bg);
+  background-color: var(--left-column-bg);
+  color: var(--left-column-color);
+  border-top: solid 1px var(--left-column-color);
   padding: 10px 25px;
 }
 
