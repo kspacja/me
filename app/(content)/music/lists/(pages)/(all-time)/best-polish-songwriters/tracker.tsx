@@ -53,6 +53,7 @@ export default function Tracker() {
           // youtube
           if (a.href.includes('youtube.com/watch')) {
             e.preventDefault();
+            e.stopImmediatePropagation();
 
             const videoId = a.href.split('v=')[1].split('&')[0];
 
@@ -69,6 +70,7 @@ export default function Tracker() {
           // tidal
           if (a.href.includes('tidal.com/track')) {
             e.preventDefault();
+            e.stopImmediatePropagation();
 
             // e.g. https://tidal.com/track/32588932/u
             const trackId = a.href.split('/track/')[1].split('/')[0]
