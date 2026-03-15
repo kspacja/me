@@ -1,5 +1,5 @@
-import PassThrough from "components/PassThrough";
 import { Metadata } from "next";
+import Tracker from "./tracker";
 
 export const metadata: Metadata = {
   title: "Najlepsi polscy piosenkopisarze i pisarki",
@@ -20,4 +20,14 @@ export const metadata: Metadata = {
   },
 };
 
-export default PassThrough;
+export default function Layout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+
+  return (<>
+    <Tracker />
+    {children}
+  </>);
+};
