@@ -48,6 +48,12 @@ export default function Tracker() {
         a.setAttribute('data-umami-event', 'external-link');
         a.setAttribute('data-umami-event-caption', a.textContent || a.href);
       }
+
+      // On touch devices, rewrite YouTube watch URLs to embed URLs so Android doesn't open the YouTube app
+      if (window.matchMedia('(pointer: coarse)').matches && a.href.includes('youtube.com/watch')) {
+        const videoId = a.href.split('v=')[1]?.split('&')[0];
+        if (videoId) a.href = `https://www.youtube.com/embed/${videoId}`;
+      }
     });
 
     // Attach at document level with capture so we fire before React's root listener,
@@ -60,13 +66,15 @@ export default function Tracker() {
       if (!a) return;
 
       // youtube
-      if (a.href.includes('youtube.com/watch')) {
+      if (a.href.includes('youtube.com/watch') || a.href.includes('youtube.com/embed/')) {
         e.preventDefault();
         e.stopImmediatePropagation();
 
         window.umami?.track('external-link', { caption: a.textContent || a.href });
 
-        const videoId = a.href.split('v=')[1].split('&')[0];
+        const videoId = a.href.includes('/embed/')
+          ? a.href.split('/embed/')[1].split('?')[0]
+          : a.href.split('v=')[1].split('&')[0];
         openPlayer({
           src: `https://www.youtube.com/embed/${videoId}?autoplay=1`,
           width: '320',

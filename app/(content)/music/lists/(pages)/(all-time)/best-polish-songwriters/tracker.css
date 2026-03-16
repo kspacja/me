@@ -27,10 +27,11 @@
 .yt-close {
   background-color: var(--left-column-color);
   color: var(--left-column-bg);
+  transition: filter 0.3s ease;
   border: none;
 
   &:hover {
-    opacity: 0.8;
+    filter: brightness(150%);
   }
 }
 
