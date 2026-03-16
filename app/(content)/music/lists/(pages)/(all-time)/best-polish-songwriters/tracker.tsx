@@ -49,10 +49,12 @@ export default function Tracker() {
         a.setAttribute('data-umami-event-caption', a.textContent || a.href);
       }
 
-      // On touch devices, rewrite YouTube watch URLs to embed URLs so Android doesn't open the YouTube app
-      if (window.matchMedia('(pointer: coarse)').matches && a.href.includes('youtube.com/watch')) {
-        const videoId = a.href.split('v=')[1]?.split('&')[0];
-        if (videoId) a.href = `https://www.youtube.com/embed/${videoId}`;
+      // On touch devices, rewrite YouTube/Tidal URLs through a redirect endpoint
+      // so Android's intent system doesn't intercept the tap and open the native app.
+      if (window.matchMedia('(pointer: coarse)').matches) {
+        if (a.href.includes('youtube.com/watch') || a.href.includes('tidal.com/track')) {
+          a.href = `/api/redirect?url=${encodeURIComponent(a.href)}`;
+        }
       }
     });
 
@@ -65,16 +67,18 @@ export default function Tracker() {
       const a = (e.target as Element).closest('a');
       if (!a) return;
 
+      // Unwrap redirect URL on touch devices
+      const redirectParam = new URL(a.href, window.location.href).searchParams.get('url');
+      const effectiveHref = redirectParam ? decodeURIComponent(redirectParam) : a.href;
+
       // youtube
-      if (a.href.includes('youtube.com/watch') || a.href.includes('youtube.com/embed/')) {
+      if (effectiveHref.includes('youtube.com/watch')) {
         e.preventDefault();
         e.stopImmediatePropagation();
 
-        window.umami?.track('external-link', { caption: a.textContent || a.href });
+        window.umami?.track('external-link', { caption: a.textContent || effectiveHref });
 
-        const videoId = a.href.includes('/embed/')
-          ? a.href.split('/embed/')[1].split('?')[0]
-          : a.href.split('v=')[1].split('&')[0];
+        const videoId = effectiveHref.split('v=')[1].split('&')[0];
         openPlayer({
           src: `https://www.youtube.com/embed/${videoId}?autoplay=1`,
           width: '320',
@@ -85,14 +89,14 @@ export default function Tracker() {
       }
 
       // tidal
-      if (a.href.includes('tidal.com/track')) {
+      if (effectiveHref.includes('tidal.com/track')) {
         e.preventDefault();
         e.stopImmediatePropagation();
 
-        window.umami?.track('external-link', { caption: a.textContent || a.href });
+        window.umami?.track('external-link', { caption: a.textContent || effectiveHref });
 
         // e.g. https://tidal.com/track/32588932/u
-        const trackId = a.href.split('/track/')[1].split('/')[0];
+        const trackId = effectiveHref.split('/track/')[1].split('/')[0];
         openPlayer({
           src: `https://embed.tidal.com/tracks/${trackId}`,
           width: '320',
