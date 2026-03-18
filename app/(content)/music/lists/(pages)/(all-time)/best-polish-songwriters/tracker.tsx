@@ -46,7 +46,17 @@ export default function Tracker() {
     document.querySelectorAll('a').forEach(a => {
       if (a.host !== window.location.host && !a.getAttribute('data-umami-event')) {
         a.setAttribute('data-umami-event', 'external-link');
-        a.setAttribute('data-umami-event-caption', a.textContent || a.href);
+
+        // find sibiling element before, which <label> 
+
+        const label = a.previousElementSibling;
+        if (label?.tagName === 'LABEL') {
+          a.setAttribute('data-umami-event-caption', label.textContent || a.href);
+        }
+
+        const caption = (label?.tagName === 'LABEL' ? label.textContent?.trim().replace(':', '') : null) ?? (a.textContent || a.href);
+
+        a.setAttribute('data-umami-event-caption', caption);
       }
 
       // On touch devices, rewrite YouTube/Tidal URLs through a redirect endpoint
