@@ -7,7 +7,8 @@
     "build": "next build",
     "postbuild": "next-sitemap",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "check-draft": "npx tsx 'app/(content)/music/lists/(pages)/(all-time)/best-polish-songwriters/check_draft_list.ts'"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.0.0",
