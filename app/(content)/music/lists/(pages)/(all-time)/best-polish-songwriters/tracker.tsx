@@ -11,6 +11,16 @@ declare global {
 
 let openedWrapper: HTMLDivElement | null = null;
 
+function getEffectiveHref(a: HTMLAnchorElement): string {
+  const redirectParam = new URL(a.href, window.location.href).searchParams.get('url');
+  return redirectParam ? decodeURIComponent(redirectParam) : a.href;
+}
+
+function trackLinkClick(a: HTMLAnchorElement, source: string): void {
+  const effectiveHref = getEffectiveHref(a);
+  window.umami?.track('external-link', { caption: a.textContent || effectiveHref, source });
+}
+
 function openPlayer(iframeProps: { src: string, width: string, height: string, allow: string}) {
   if (openedWrapper) {
     openedWrapper.remove();
@@ -70,6 +80,11 @@ export default function Tracker() {
 
     // Attach at document level with capture so we fire before React's root listener,
     // which otherwise calls router.push() before our <a>-level handler runs.
+    const handleContextMenu = (e: MouseEvent) => {
+      const a = (e.target as Element).closest('a');
+      if (a) trackLinkClick(a, 'contextmenu');
+    };
+
     const handleClick = (e: MouseEvent) => {
       // Let cmd/ctrl/shift/middle-click pass through for native new-tab behavior
       if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
@@ -77,16 +92,13 @@ export default function Tracker() {
       const a = (e.target as Element).closest('a');
       if (!a) return;
 
-      // Unwrap redirect URL on touch devices
-      const redirectParam = new URL(a.href, window.location.href).searchParams.get('url');
-      const effectiveHref = redirectParam ? decodeURIComponent(redirectParam) : a.href;
+      trackLinkClick(a, 'click');
+      const effectiveHref = getEffectiveHref(a);
 
       // youtube
       if (effectiveHref.includes('youtube.com/watch')) {
         e.preventDefault();
         e.stopImmediatePropagation();
-
-        window.umami?.track('external-link', { caption: a.textContent || effectiveHref });
 
         const videoId = effectiveHref.split('v=')[1].split('&')[0];
         openPlayer({
@@ -102,8 +114,6 @@ export default function Tracker() {
       if (effectiveHref.includes('tidal.com/track')) {
         e.preventDefault();
         e.stopImmediatePropagation();
-
-        window.umami?.track('external-link', { caption: a.textContent || effectiveHref });
 
         // e.g. https://tidal.com/track/32588932/u
         const trackId = effectiveHref.split('/track/')[1].split('/')[0];
@@ -124,7 +134,11 @@ export default function Tracker() {
     openedWrapper = defaultWrapper;
 
     document.addEventListener('click', handleClick, { capture: true });
-    return () => document.removeEventListener('click', handleClick, { capture: true });
+    document.addEventListener('contextmenu', handleContextMenu, { capture: true });
+    return () => {
+      document.removeEventListener('click', handleClick, { capture: true });
+      document.removeEventListener('contextmenu', handleContextMenu, { capture: true });
+    };
   }, [])
 
   return null;
