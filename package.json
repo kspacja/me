@@ -8,7 +8,8 @@
     "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint",
-    "check-draft": "npx tsx 'app/(content)/music/lists/(pages)/(all-time)/best-polish-songwriters/check_draft_list.ts'"
+    "check-draft": "npx tsx 'app/(content)/music/lists/(pages)/(all-time)/best-polish-songwriters/check_draft_list.ts'",
+    "extract-names": "npx tsx 'app/(content)/music/lists/(pages)/(all-time)/best-polish-songwriters/extract_names.ts'"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.0.0",
