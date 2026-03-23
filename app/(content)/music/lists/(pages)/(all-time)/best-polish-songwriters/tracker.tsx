@@ -16,8 +16,9 @@ function getEffectiveHref(a: HTMLAnchorElement): string {
   return redirectParam ? decodeURIComponent(redirectParam) : a.href;
 }
 
-function trackLinkClick(a: HTMLAnchorElement, source: string): void {
+function trackExternalLinkClick(a: HTMLAnchorElement, source: string): void {
   const effectiveHref = getEffectiveHref(a);
+
   window.umami?.track('external-link', { caption: a.textContent || effectiveHref, source });
 }
 
@@ -82,7 +83,7 @@ export default function Tracker() {
     // which otherwise calls router.push() before our <a>-level handler runs.
     const handleContextMenu = (e: MouseEvent) => {
       const a = (e.target as Element).closest('a');
-      if (a) trackLinkClick(a, 'contextmenu');
+      if (a) trackExternalLinkClick(a, 'contextmenu');
     };
 
     const handleClick = (e: MouseEvent) => {
@@ -92,7 +93,10 @@ export default function Tracker() {
       const a = (e.target as Element).closest('a');
       if (!a) return;
 
-      trackLinkClick(a, 'click');
+      // Ignore internal links
+      if (a.host === window.location.host) return;
+
+      trackExternalLinkClick(a, 'click');
       const effectiveHref = getEffectiveHref(a);
 
       // youtube
