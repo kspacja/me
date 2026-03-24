@@ -83,6 +83,10 @@ export default function Tracker() {
     // which otherwise calls router.push() before our <a>-level handler runs.
     const handleContextMenu = (e: MouseEvent) => {
       const a = (e.target as Element).closest('a');
+
+       // Ignore internal links
+      if (a?.host === window.location.host) return;
+
       if (a) trackExternalLinkClick(a, 'contextmenu');
     };
 
