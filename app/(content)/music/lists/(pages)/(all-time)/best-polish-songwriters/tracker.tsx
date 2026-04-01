@@ -55,21 +55,6 @@ function openPlayer(iframeProps: { src: string, width: string, height: string, a
 export default function Tracker() {
   useEffect(() => {
     document.querySelectorAll('a').forEach(a => {
-      if (a.host !== window.location.host && !a.getAttribute('data-umami-event')) {
-        a.setAttribute('data-umami-event', 'external-link');
-
-        // find sibiling element before, which <label> 
-
-        const label = a.previousElementSibling;
-        if (label?.tagName === 'LABEL') {
-          a.setAttribute('data-umami-event-caption', label.textContent || a.href);
-        }
-
-        const caption = (label?.tagName === 'LABEL' ? label.textContent?.trim().replace(':', '') : null) ?? (a.textContent || a.href);
-
-        a.setAttribute('data-umami-event-caption', caption);
-      }
-
       // On touch devices, rewrite YouTube/Tidal URLs through a redirect endpoint
       // so Android's intent system doesn't intercept the tap and open the native app.
       if (window.matchMedia('(pointer: coarse)').matches) {
