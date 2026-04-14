@@ -1,0 +1,41 @@
+.collapse {
+  position: relative;
+}
+
+.collapse__content {
+  overflow: hidden;
+  max-height: 4em;
+  transition: max-height 0.4s ease;
+}
+
+.collapse__content--expanded {
+  max-height: 1000em;
+}
+
+.collapse__fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 8em;
+  background: linear-gradient(transparent, var(--canvas));
+  pointer-events: none;
+}
+
+.collapse__toggle {
+  display: block;
+  background: none;
+  border: none;
+  color: var(--font-color);
+  cursor: pointer;
+  font-family: var(--font);
+  
+  padding: 0.3em 0;
+  opacity: 0.99;
+  text-decoration: underline;
+  margin-left: auto;
+}
+
+.collapse__toggle:hover {
+  opacity: 0.7;
+}
