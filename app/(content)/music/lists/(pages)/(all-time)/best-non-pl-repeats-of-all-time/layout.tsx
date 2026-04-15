@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   description:
     "List of the best non-Polish repeats of all time. The best songs that are worth listening to over and over again.",
   keywords: ["best", "repeats", "songs", "music", "all time"],
+  alternates: {
+    canonical: "/music/lists/best-non-pl-repeats-of-all-time",
+  },
 };
 
 export default PassThrough;

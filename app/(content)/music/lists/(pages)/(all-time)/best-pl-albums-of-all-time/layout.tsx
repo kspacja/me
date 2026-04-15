@@ -18,6 +18,9 @@ export const metadata: Metadata = {
     "favorite",
     "ulubione",
   ],
+  alternates: {
+    canonical: "/music/lists/best-pl-albums-of-all-time",
+  },
 };
 
 export default PassThrough;

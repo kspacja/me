@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { LayoutRightColumn, LayoutLeftColumn } from "common/indexStyles";
 import ContentsTable from "components/ContentsTable";
 import Link from "next/link";
+import { createArticleLD, createBreadcrumbLD } from "app/json-ld";
 
 const metaKeywords = [
   "react",
@@ -27,6 +28,9 @@ export const metadata: Metadata = {
   title:
     "How to reuse groups of fields / fieldsets of a complex form in React with TypeScript and react-hook-form. | programing stuff ",
   keywords: metaKeywords,
+  alternates: {
+    canonical: "/programing/reusable-fieldsets",
+  },
   openGraph: {
     title: "Reuable form fieldsets?",
     description:
@@ -37,6 +41,21 @@ export const metadata: Metadata = {
   },
 };
 
+const articleLD = createArticleLD(
+  "How to reuse groups of fields / fieldsets of a complex form in React with TypeScript and react-hook-form.",
+  "How to reuse groups of fields / fieldsets of a complex form in React with TypeScript and react-hook-form.",
+  "/programing/reusable-fieldsets"
+);
+
+const breadcrumbLD = createBreadcrumbLD([
+  { name: "Home", path: "/" },
+  { name: "Programming", path: "/programing" },
+  {
+    name: "Reusable form fieldsets",
+    path: "/programing/reusable-fieldsets",
+  },
+]);
+
 export default function Layout({
   text,
   contents,
@@ -46,6 +65,10 @@ export default function Layout({
 }) {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([articleLD, breadcrumbLD]) }}
+      />
       <LayoutLeftColumn>
         <Link href="/">
           <h2 className="mb-0">Krzysztof Ciach&apos;s</h2>

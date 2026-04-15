@@ -3,6 +3,9 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Best Music of 2020-2024",
+  alternates: {
+    canonical: "/music/lists/best-of-2020-2024",
+  },
 };
 
 export default PassThrough;

@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   description:
     "List of the best non-Polish albums of all time. The best albums that are worth listening to over and over again.",
   keywords: ["best", "album", "music", "all time"],
+  alternates: {
+    canonical: "/music/lists/best-non-pl-albums-of-all-time",
+  },
 };
 
 export default PassThrough;

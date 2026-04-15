@@ -18,6 +18,9 @@ export const metadata: Metadata = {
     type: "website",
     title: "Najlepsi polscy piosenkopisarze i pisarki",
   },
+  alternates: {
+    canonical: "/music/lists/best-polish-songwriters",
+  },
 };
 
 export default function Layout({

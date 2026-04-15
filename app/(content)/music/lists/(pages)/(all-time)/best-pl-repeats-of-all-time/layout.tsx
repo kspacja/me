@@ -19,6 +19,9 @@ export const metadata: Metadata = {
     "najlepsze",
     "single",
   ],
+  alternates: {
+    canonical: "/music/lists/best-pl-repeats-of-all-time",
+  },
 };
 
 export default PassThrough;
