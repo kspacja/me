@@ -9,7 +9,9 @@
     "start": "next start",
     "lint": "next lint",
     "check-draft": "npx tsx 'app/(content)/music/lists/(pages)/(all-time)/best-polish-songwriters/check_draft_list.ts'",
-    "extract-names": "npx tsx 'app/(content)/music/lists/(pages)/(all-time)/best-polish-songwriters/extract_names.ts'"
+    "extract-names": "npx tsx 'app/(content)/music/lists/(pages)/(all-time)/best-polish-songwriters/extract_names.ts'",
+    "create-artist": "npx tsx scripts/create-artist-template.ts",
+    "batch-create-artists": "npx tsx scripts/batch-create-artists.ts"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.0.0",
