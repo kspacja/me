@@ -106,7 +106,7 @@ export default createGlobalStyle`
     cursor: pointer;
   }
 
-  ul:not(.list), {
+  ul:not(.list) {
     list-style: none;
     padding: 0 0 1rem;
     margin: 0;
@@ -144,7 +144,7 @@ export default createGlobalStyle`
     border-top: 1px solid rgba(255, 255, 255, 0.6);
     padding-top: 1rem;
     margin-top: 2.5rem;
-    
+
     font-size: 1.3em;
 
     h3 {

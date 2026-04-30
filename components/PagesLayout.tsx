@@ -1,4 +1,3 @@
-import Link from "next/link";
 import BackLink from "./BackLink";
 
 export default function pageLayout(backUrl: string) {

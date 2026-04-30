@@ -1,11 +1,10 @@
-import rehypeHighlight from "rehype-highlight";
 import createMDX from "@next/mdx";
 
 const withMDX = createMDX({
   extension: /\.mdx?$/,
   options: {
     remarkPlugins: [],
-    rehypePlugins: [rehypeHighlight],
+    rehypePlugins: ["rehype-highlight"],
   },
 });
 
@@ -13,7 +12,17 @@ const withMDX = createMDX({
 const nextConfig = {
   pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
   reactStrictMode: true,
-  swcMinify: true,
+  compiler: {
+    styledComponents: true,
+  },
+  turbopack: {
+    rules: {
+      "*.svg": {
+        loaders: ["@svgr/webpack"],
+        as: "*.js",
+      },
+    },
+  },
   webpack(config) {
     // https://react-svgr.com/docs/next/
 

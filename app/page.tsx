@@ -1,3 +1,5 @@
+import { Fragment } from "react";
+import Link from "next/link";
 import ListItem from "components/ListItem";
 import InlineListItem from "components/InlineListItem";
 import { SpecialLink } from "components/SpecialLink";
@@ -36,13 +38,13 @@ const Home = () => {
           ))}
 
           <li className="mt-1 print-hide">
-            <a href="/programing">programing stuff</a>
+            <Link href="/programing">programing stuff</Link>
           </li>
           <li className="print-hide">
-            <a href="/music">music stuff</a>
+            <Link href="/music">music stuff</Link>
           </li>
           <li className="print-hide">
-            <a href="/movies">movies stuff</a>
+            <Link href="/movies">movies stuff</Link>
           </li>
         </ul>
       </Contact>
@@ -137,10 +139,9 @@ const Home = () => {
               printMargin,
               printBreakPage,
             }) => (
-              <>
+              <Fragment key={dateRange}>
                 {printMargin && <div className="print-page-margin-top-small" />}
                 <ListItem
-                  key={dateRange}
                   title={name}
                   subtitle={technology}
                   text={dateRange}
@@ -148,7 +149,7 @@ const Home = () => {
                   <ProjectDesc>{role}</ProjectDesc>
                 </ListItem>
                 {printBreakPage && <div className="print-page-break" />}
-              </>
+              </Fragment>
             )
           )}
         </ul>

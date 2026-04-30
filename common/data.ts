@@ -179,7 +179,7 @@ export const FREELANCE = [
   {
     name: "Website with the recent polish music - nowy-polonez.pl",
     technology: "JavaScript, Next.js, web canvas, Spotify API, ffmpeg",
-    dateRange: "06.2023 - 04.2024",
+    dateRange: "02.2025 - 04.2025",
   },
   {
     name: "Website for Herosi Fundation - with ecommerce and blog",

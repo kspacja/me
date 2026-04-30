@@ -10,13 +10,13 @@ import { navigationMenuLD, pageLD } from "./json-ld";
 import "common/code.css";
 
 // If loading a variable font, you don't need to specify the font weight
-const dmSans = Outfit({
+const outfit = Outfit({
   subsets: ["latin"],
   display: "swap",
   variable: "--dm-sans-font",
 });
 
-const dmSerifDisplay = Outfit({
+const outfitBold = Outfit({
   subsets: ["latin"],
   weight: "700",
   variable: "--dm-serif-display-font",
@@ -44,7 +44,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const className = `${dmSans.variable} ${dmSerifDisplay.variable}`;
+  const className = `${outfit.variable} ${outfitBold.variable}`;
 
   return (
     <html lang="pl" className={className}>

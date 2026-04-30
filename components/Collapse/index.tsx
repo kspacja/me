@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect, use } from "react";
+import { useState, useRef, useEffect } from "react";
 import "./Collapse.css";
 
 const COLLAPSED_HEIGHT_PX = 64; // ~4em at 16px base

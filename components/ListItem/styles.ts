@@ -1,7 +1,5 @@
 "use client";
 
-import { MOBILE } from "common/consts";
-import { LeftColumn } from "components/Columns";
 import styled from "styled-components";
 
 export const Title = styled.div`
