@@ -1,26 +1,20 @@
-"use client";
-
-import styled from "styled-components";
-
-export const Title = styled.div`
+.title {
   font-size: var(--font-size-l);
   font-weight: 500;
   margin-bottom: 0.15rem;
-`;
+}
 
-export const Subtitle = styled.div`
+.subtitle {
   font-size: var(--font-size-s);
-`;
+}
 
-export const Text = styled.div`
+.text {
   font-size: var(--font-size-xs);
-`;
+}
 
-export const Container = styled.div`
+.container {
   display: flex;
   flex-direction: column;
-
   break-inside: avoid;
-
   padding-bottom: 0.9rem;
-`;
+}

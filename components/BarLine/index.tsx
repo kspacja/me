@@ -1,10 +1,17 @@
 "use client";
 
 import useInView from "common/useInView";
-import { Bar } from "./styles";
+import styles from "./styles.module.css";
 
 export default function BarLine({ level }: { level: number }) {
   const { containerRef, visible } = useInView();
+  const barWidth = visible ? `${((level + 1) / 5) * 100}%` : "0%";
 
-  return <Bar ref={containerRef} visible={visible.toString()} level={level} />;
+  return (
+    <div
+      ref={containerRef}
+      className={styles.bar}
+      style={{ "--bar-width": barWidth } as React.CSSProperties}
+    />
+  );
 }

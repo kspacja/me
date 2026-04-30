@@ -1,4 +1,4 @@
-import { Subtitle, Title, Text, Container } from "./styles";
+import styles from "./styles.module.css";
 
 export default function ListItem({
   Component = "li",
@@ -17,12 +17,12 @@ export default function ListItem({
 }) {
   return (
     <Component className={className}>
-      <Container className="list-item">
-        <Title>{title}</Title>
-        {subtitle && <Subtitle>{subtitle}</Subtitle>}
-        {text && <Text>{text}</Text>}
+      <div className={`${styles.container} list-item`}>
+        <div className={styles.title}>{title}</div>
+        {subtitle && <div className={styles.subtitle}>{subtitle}</div>}
+        {text && <div className={styles.text}>{text}</div>}
         {children}
-      </Container>
+      </div>
     </Component>
   );
 }

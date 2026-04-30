@@ -1,0 +1,46 @@
+.bar {
+  height: 0.2rem;
+  margin: 0.2rem 0 0.7rem;
+  width: 80%;
+  position: relative;
+}
+
+@media print {
+  .bar {
+    margin-left: 20%;
+  }
+}
+
+.bar::after,
+.bar::before {
+  content: "";
+  position: absolute;
+  background: currentColor;
+  height: 100%;
+  left: 0;
+}
+
+@media (min-width: 951px) {
+  .bar::after,
+  .bar::before {
+    right: 0;
+    left: unset;
+  }
+}
+
+.bar::before {
+  width: 100%;
+  opacity: 0.3;
+}
+
+.bar::after {
+  width: var(--bar-width, 0%);
+  transition: width ease 2s;
+}
+
+@media print {
+  .bar::after {
+    position: static;
+    float: right;
+  }
+}

@@ -12,9 +12,6 @@ const withMDX = createMDX({
 const nextConfig = {
   pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
   reactStrictMode: true,
-  compiler: {
-    styledComponents: true,
-  },
   turbopack: {
     rules: {
       "*.svg": {

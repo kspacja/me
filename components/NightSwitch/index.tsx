@@ -3,8 +3,7 @@
 import { useDeferredValue, useEffect, useRef, useState } from "react";
 import Sun from "./sun.svg";
 import Moon from "./moon.svg";
-
-import { Button } from "./styles";
+import styles from "./styles.module.css";
 
 type TimeOfDay = "night" | "day" | null;
 
@@ -78,7 +77,8 @@ export default function NightSwitch() {
     <>
       <audio src="/buzz.mp3" ref={buzzRef} />
       <audio src="/switch.wav" ref={switchRef} />
-      <Button
+      <button
+        className={styles.button}
         onClick={() => {
           setTimeOfDay((state) => {
             turnAudio(state);
@@ -98,7 +98,7 @@ export default function NightSwitch() {
         ) : (
           <Moon width="30" height="30" />
         )}
-      </Button>
+      </button>
     </>
   );
 }

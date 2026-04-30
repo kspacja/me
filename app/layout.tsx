@@ -1,15 +1,12 @@
-import GlobalStyles from "common/globalStyles";
-import StyledComponentsRegistry from "lib/styled-component-registry";
-
 import { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import NightSwitch from "components/NightSwitch/index";
 import { Canvas, CanvasWrapper } from "components/Canvas";
 import { navigationMenuLD, pageLD } from "./json-ld";
 
+import "common/globals.css";
 import "common/code.css";
 
-// If loading a variable font, you don't need to specify the font weight
 const outfit = Outfit({
   subsets: ["latin"],
   display: "swap",
@@ -62,13 +59,10 @@ export default function RootLayout({
             data-website-id={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}
           ></script>
         )}
-        <StyledComponentsRegistry>
-          <GlobalStyles />
-          <CanvasWrapper>
-            <NightSwitch />
-            <Canvas>{children}</Canvas>
-          </CanvasWrapper>
-        </StyledComponentsRegistry>
+        <CanvasWrapper>
+          <NightSwitch />
+          <Canvas>{children}</Canvas>
+        </CanvasWrapper>
       </body>
     </html>
   );

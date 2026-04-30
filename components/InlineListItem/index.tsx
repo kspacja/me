@@ -1,4 +1,4 @@
-import { Label } from "./styles";
+import styles from "./styles.module.css";
 
 export default function InlineListItem({
   Component = "li",
@@ -11,7 +11,7 @@ export default function InlineListItem({
 }) {
   return (
     <Component>
-      <Label>{label}:</Label> {children}
+      <span className={styles.label}>{label}:</span> {children}
     </Component>
   );
 }
