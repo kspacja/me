@@ -54,7 +54,7 @@ const Home = () => {
           <br />
           Ciach
         </h1>
-        <h3>Web Developer</h3>
+        <h3 className="super-accent">Web Developer</h3>
       </Head>
       <div className="clear" />
       <ShortInformations>

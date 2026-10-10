@@ -1,9 +1,15 @@
 .leftColumn {
   padding: 3rem;
   text-align: right;
-  font-weight: 300;
+  font-weight: var(--left-column-font-weight);
   background: var(--left-column-bg);
   color: var(--left-column-color);
+}
+
+@media screen and (min-width: 951px) {
+  .leftColumn {
+    border-right: var(--left-column-border);
+  }
 }
 
 @media (max-width: 500px) {
@@ -19,26 +25,6 @@
 .leftColumn h5,
 .leftColumn h6 {
   color: var(--left-headings-font-color);
-}
-
-@media (prefers-color-scheme: dark) {
-  :global(.night) .leftColumn h1 {
-    text-shadow:
-      .05em .05em 0 hsl(var(--white-hsl) / 0.1),
-      0 0 15px var(--white),
-      0 0 52px var(--left-column-color);
-  }
-
-  :global(.night) .leftColumn h2,
-  :global(.night) .leftColumn h3,
-  :global(.night) .leftColumn h4,
-  :global(.night) .leftColumn h5,
-  :global(.night) .leftColumn h6 {
-    text-shadow:
-      .1em .1em 0 hsl(var(--white-hsl) / 0.1),
-      0 0 8px var(--white),
-      0 0 52px var(--left-column-color);
-  }
 }
 
 @media screen and (max-width: 950px) {
@@ -88,26 +74,6 @@
 .rightColumn h5,
 .rightColumn h6 {
   color: var(--right-headings-font-color);
-}
-
-@media (prefers-color-scheme: dark) {
-  :global(.night) .rightColumn h1 {
-    text-shadow:
-      .05em .05em 0 hsl(var(--white-hsl) / 0.1),
-      0 0 15px var(--white),
-      0 0 52px var(--font-color);
-  }
-
-  :global(.night) .rightColumn h2,
-  :global(.night) .rightColumn h3,
-  :global(.night) .rightColumn h4,
-  :global(.night) .rightColumn h5,
-  :global(.night) .rightColumn h6 {
-    text-shadow:
-      .1em .1em 0 hsl(var(--white-hsl) / 0.1),
-      0 0 8px var(--white),
-      0 0 52px var(--font-color);
-  }
 }
 
 @media print {

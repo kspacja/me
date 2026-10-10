@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { Outfit } from "next/font/google";
+import { Inter, Inter_Tight } from "next/font/google";
 import NightSwitch from "components/NightSwitch/index";
 import { Canvas, CanvasWrapper } from "components/Canvas";
 import { navigationMenuLD, pageLD } from "./json-ld";
@@ -7,16 +7,18 @@ import { navigationMenuLD, pageLD } from "./json-ld";
 import "common/globals.css";
 import "common/code.css";
 
-const outfit = Outfit({
-  subsets: ["latin"],
+const inter = Inter({
+  subsets: ["latin", "latin-ext"],
   display: "swap",
-  variable: "--dm-sans-font",
+  fallback: ["Helvetica Neue", "Helvetica", "Arial", "sans-serif"],
+  variable: "--inter-font",
 });
 
-const outfitBold = Outfit({
-  subsets: ["latin"],
-  weight: "700",
-  variable: "--dm-serif-display-font",
+const interTight = Inter_Tight({
+  subsets: ["latin", "latin-ext"],
+  display: "swap",
+  fallback: ["Helvetica Neue", "Helvetica", "Arial", "sans-serif"],
+  variable: "--inter-tight-font",
 });
 
 export const metadata: Metadata = {
@@ -41,7 +43,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const className = `${outfit.variable} ${outfitBold.variable}`;
+  const className = `${inter.variable} ${interTight.variable}`;
 
   return (
     <html lang="pl" className={className}>

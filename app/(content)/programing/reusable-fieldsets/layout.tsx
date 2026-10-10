@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { LayoutRightColumn, LayoutLeftColumn } from "common/indexStyles";
 import ContentsTable from "components/ContentsTable";
-import Link from "next/link";
+import HomeLink from "components/HomeLink";
 import { createArticleLD, createBreadcrumbLD } from "app/json-ld";
 
 const metaKeywords = [
@@ -70,10 +70,7 @@ export default function Layout({
         dangerouslySetInnerHTML={{ __html: JSON.stringify([articleLD, breadcrumbLD]) }}
       />
       <LayoutLeftColumn>
-        <Link href="/">
-          <h2 className="mb-0">Krzysztof Ciach&apos;s</h2>
-          <h4>personal website</h4>
-        </Link>
+        <HomeLink />
         <h3 className="mb-0">programing stuff</h3>
         {contents && (
           <div>

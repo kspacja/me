@@ -1,6 +1,6 @@
 :root {
-  --font: var(--dm-sans-font);
-  --heading-font: var(--dm-serif-display-font);
+  --font: var(--inter-font);
+  --heading-font: var(--inter-tight-font);
   --font-size-l: 1.2rem;
   --font-size-s: 1.0rem;
   --font-size-xs: 0.8rem;
@@ -16,6 +16,21 @@
   --black: #000;
   --neon-blue: #4cc9f0;
   --neon-pink: #f20089;
+  --bg: #ffffff;
+  --text-primary: #000000;
+  --border-strong: #000000;
+  --gray-100: #f2f2f2;
+  --gray-300: #d9d9d9;
+  --gray-600: #6b6b6b;
+  --accent: #015def;
+  --accent-hover: #004fcc;
+  --text-on-accent: #ffffff;
+  --big-accent: #ffdd19;
+  --super-accent: #ff1f24;
+  --super-accent-shade: #e61b21;
+  --error: var(--super-accent-shade);
+  --warning: var(--yellow);
+  --info: var(--accent);
   --shadow-color: 0deg 8% 39%;
   --shadow-elevation-low:
     -0.3px 0.4px 0.5px hsl(var(--shadow-color) / 0.44),
@@ -36,23 +51,30 @@
     -24.8px 34.4px 45.8px -2.4px hsl(var(--shadow-color) / 0.36),
     -36.9px 51.1px 68.1px -2.8px hsl(var(--shadow-color) / 0.35);
 
-  --background: #e5e5e5;
-  --canvas: #fffaf9;
-  --left-column-bg: #000000;
-  --left-column-color: #fca311;
-  --font-color: var(--black);
+  --background: var(--bg);
+  --canvas: var(--bg);
+  --left-column-bg: var(--bg);
+  --left-column-color: var(--text-primary);
+  --left-column-border: 3px solid var(--border-strong);
+  --left-column-font-weight: 400;
+  --font-weight-base: 400;
+  --font-color: var(--text-primary);
   --body-background-image: none;
   --body-background-size: unset;
-  --canvas-wrapper-shadow-display: block;
+  --canvas-wrapper-shadow-display: none;
   --left-headings-font-color: var(--left-column-color);
-  --right-headings-font-color: var(--black);
+  --right-headings-font-color: var(--text-primary);
   --night-shadow: var(--neon-pink);
-  --night-switch-bg: var(--left-column-bg);
-  --night-switch-color: var(--left-column-color);
-  --canvas-shadow: var(--shadow-elevation-medium);
-  --code-color: var(--left-column-color);
-  --code-background: var(--left-column-bg);
-  --other-overlay-color: rgba(0, 0, 0, 0.05);
+  --night-switch-bg: var(--accent);
+  --night-switch-color: var(--text-on-accent);
+  --canvas-shadow: none;
+  --code-color: var(--text-primary);
+  --code-background: var(--gray-100);
+  --code-radius: 0;
+  --other-overlay-color: var(--gray-100);
+  --link-color: var(--text-primary);
+  --link-hover-color: var(--accent-hover);
+  --contents-border: 3px solid var(--border-strong);
 }
 
 html,
@@ -68,7 +90,7 @@ textarea {
   padding: 0;
   margin: 0;
   font-family: var(--font);
-  font-weight: 400;
+  font-weight: var(--font-weight-base);
   font-size: 16px;
   color: var(--font-color);
 }
@@ -91,9 +113,15 @@ h6 {
   margin-top: 0;
 }
 
+h1,
+h2 {
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 0.95;
+}
+
 h1 {
-  font-size: 4.5rem;
-  line-height: 1.1;
+  font-size: clamp(3rem, 6vw, 5.5rem);
   margin: -0.2em 0 0;
 }
 
@@ -105,8 +133,13 @@ h3 {
   font-size: 1.5rem;
 }
 
+hr {
+  border: 1px solid var(--text-primary);
+  border-width: 0 0 1px 0;
+}
+
 a {
-  color: inherit;
+  color: var(--link-color);
   text-decoration: underline;
   text-underline-offset: 2px;
   text-decoration-thickness: 1px;
@@ -115,6 +148,10 @@ a {
 a:hover,
 a:hover code {
   text-decoration: none;
+}
+
+a:hover {
+  color: var(--link-hover-color);
 }
 
 a code {
@@ -169,7 +206,7 @@ code {
   background: var(--code-background);
   font-size: 0.8em;
   padding: 0.2em 0.3em;
-  border-radius: 3px;
+  border-radius: var(--code-radius);
 }
 
 pre {
@@ -189,7 +226,7 @@ pre {
 }
 
 .contents {
-  border-top: 1px solid rgba(255, 255, 255, 0.6);
+  border-top: var(--contents-border);
   padding-top: 1rem;
   margin-top: 2.5rem;
   font-size: 1.3em;
@@ -212,26 +249,49 @@ pre {
   box-sizing: border-box;
 }
 
+/* Override heading tokens too, since column heading rules out-specify a bare class */
+.super-accent {
+  --left-headings-font-color: var(--super-accent);
+  --right-headings-font-color: var(--super-accent);
+  color: var(--super-accent);
+}
+
+.super-accent-shade {
+  --left-headings-font-color: var(--super-accent-shade);
+  --right-headings-font-color: var(--super-accent-shade);
+  color: var(--super-accent-shade);
+}
+
 .night {
   --background: var(--black);
   --canvas: var(--black);
   --left-column-bg: var(--black);
-  --left-column-color: var(--neon-pink);
-  --font-color: var(--neon-blue);
-  --body-background-image: url('/brick.jpeg');
-  --body-background-size: 50%;
+  --left-column-color: var(--white);
+  --left-column-border: 3px solid var(--white);
+  --left-column-font-weight: 200;
+  --font-weight-base: 100;
+  --font-color: var(--white);
+  --body-background-image: none;
+  --body-background-size: unset;
   --canvas-wrapper-shadow-display: none;
-  --left-headings-font-color: var(--white);
+  --left-headings-font-color: var(--left-column-color);
   --right-headings-font-color: var(--white);
-  --night-switch-bg: var(--black);
-  --night-switch-color: var(--neon-pink);
-  --canvas-shadow: 0 0 2px var(--white),
-                   0 0 10px var(--night-shadow),
-                   0 0 15px var(--night-shadow),
-                   0 0 35px var(--night-shadow);
-  --code-color: var(--black);
-  --code-background: var(--neon-blue);
-  --other-overlay-color: rgba(255, 255, 255, 0.2);
+  --night-switch-bg: var(--accent);
+  --night-switch-color: var(--text-on-accent);
+  --canvas-shadow: none;
+  --code-color: var(--white);
+  --code-background: #1a1a1a;
+  --code-radius: 0;
+  --other-overlay-color: #1a1a1a;
+  --link-color: var(--white);
+  --link-hover-color: var(--accent-hover);
+  --contents-border: 3px solid var(--white);
+  /* Temporary night accents, to be tuned */
+  --accent: #4d8dff;
+  --accent-hover: #7aa9ff;
+  --text-on-accent: var(--black);
+  --super-accent: #ff5c5f;
+  --super-accent-shade: #ff7a7c;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -239,42 +299,64 @@ pre {
     --background: var(--black);
     --canvas: var(--black);
     --left-column-bg: var(--black);
-    --left-column-color: var(--neon-pink);
-    --font-color: var(--neon-blue);
-    --body-background-image: url('/brick.jpeg');
-    --body-background-size: 50%;
+    --left-column-color: var(--white);
+    --left-column-border: 3px solid var(--white);
+    --left-column-font-weight: 400;
+    --font-weight-base: 100;
+    --font-color: var(--white);
+    --body-background-image: none;
+    --body-background-size: unset;
     --canvas-wrapper-shadow-display: none;
-    --left-headings-font-color: var(--white);
+    --left-headings-font-color: var(--left-column-color);
     --right-headings-font-color: var(--white);
-    --night-switch-bg: var(--black);
-    --night-switch-color: var(--neon-pink);
-    --canvas-shadow: 0 0 2px var(--white),
-                     0 0 10px var(--night-shadow),
-                     0 0 15px var(--night-shadow),
-                     0 0 35px var(--night-shadow);
-    --code-color: var(--black);
-    --code-background: var(--neon-blue);
-    --other-overlay-color: rgba(255, 255, 255, 0.2);
+    --night-switch-bg: var(--accent);
+    --night-switch-color: var(--text-on-accent);
+    --canvas-shadow: none;
+    --code-color: var(--white);
+    --code-background: #1a1a1a;
+    --code-radius: 0;
+    --other-overlay-color: #1a1a1a;
+    --link-color: var(--accent);
+    --link-hover-color: var(--accent-hover);
+    --contents-border: 3px solid var(--white);
+    /* Temporary night accents, to be tuned */
+    --accent: #4d8dff;
+    --accent-hover: #7aa9ff;
+    --text-on-accent: var(--black);
+    --super-accent: #ff5c5f;
+    --super-accent-shade: #ff7a7c;
   }
 
   .day {
-    --background: #e5e5e5;
-    --canvas: #fffaf9;
-    --left-column-bg: #000000;
-    --left-column-color: #fca311;
-    --font-color: var(--black);
+    --background: var(--bg);
+    --canvas: var(--bg);
+    --left-column-bg: var(--bg);
+    --left-column-color: var(--text-primary);
+    --left-column-border: 3px solid var(--border-strong);
+    --left-column-font-weight: 400;
+    --font-weight-base: 400;
+    --font-color: var(--text-primary);
     --body-background-image: none;
     --body-background-size: unset;
-    --canvas-wrapper-shadow-display: block;
+    --canvas-wrapper-shadow-display: none;
     --left-headings-font-color: var(--left-column-color);
-    --right-headings-font-color: var(--black);
+    --right-headings-font-color: var(--text-primary);
     --night-shadow: var(--neon-pink);
-    --night-switch-bg: var(--left-column-bg);
-    --night-switch-color: var(--left-column-color);
-    --canvas-shadow: var(--shadow-elevation-medium);
-    --code-color: var(--left-column-color);
-    --code-background: var(--left-column-bg);
-    --other-overlay-color: rgba(0, 0, 0, 0.05);
+    --night-switch-bg: var(--accent);
+    --night-switch-color: var(--text-on-accent);
+    --canvas-shadow: none;
+    --code-color: var(--text-primary);
+    --code-background: var(--gray-100);
+    --code-radius: 0;
+    --other-overlay-color: var(--gray-100);
+    --link-color: var(--text-color);
+    --link-hover-color: var(--accent-hover);
+    --contents-border: 3px solid var(--border-strong);
+    --accent: #015def;
+    --accent-hover: #004fcc;
+    --text-on-accent: #ffffff;
+    --super-accent: #ff1f24;
+    --super-accent-shade: #e61b21;
   }
 }
 

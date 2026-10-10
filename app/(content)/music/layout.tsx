@@ -1,5 +1,6 @@
 import { LayoutRightColumn, LayoutLeftColumn } from "common/indexStyles";
 import Link from "next/link";
+import HomeLink from "components/HomeLink";
 
 import { Metadata } from "next";
 
@@ -25,10 +26,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <LayoutLeftColumn>
-        <Link href="/">
-          <h2 className="mb-0">Krzysztof Ciach&apos;s</h2>
-          <h4>personal website</h4>
-        </Link>
+        <HomeLink />
         <h2 className="mb-0">music stuff</h2>
         <ul>
           <li>

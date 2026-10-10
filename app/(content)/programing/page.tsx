@@ -1,15 +1,13 @@
 import { LayoutRightColumn, LayoutLeftColumn } from "common/indexStyles";
 import BackLink from "components/BackLink";
 import Link from "next/link";
+import HomeLink from "components/HomeLink";
 
 export default function Page() {
   return (
     <>
       <LayoutLeftColumn>
-        <Link href="/">
-          <h2 className="mb-0">Krzysztof Ciach&apos;s</h2>
-          <h4>personal website</h4>
-        </Link>
+        <HomeLink />
         <h3 className="mb-0">programing stuff</h3>
       </LayoutLeftColumn>
       <LayoutRightColumn className="page">

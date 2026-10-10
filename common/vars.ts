@@ -27,37 +27,51 @@ export const NIGHT_VARS = `
   --code-background: var(--neon-blue);
 
   --other-overlay-color: rgba(255, 255, 255, 0.2);
+
+  --left-column-font-weight: 300;
+  --left-column-border: none;
+  --code-radius: 3px;
+  --link-color: currentColor;
+  --link-hover-color: currentColor;
+  --contents-border: 1px solid rgba(255, 255, 255, 0.6);
 `;
 
 export const DAY_VARS = `
-  --background: #e5e5e5;
-  --canvas: #fffaf9;
-  --left-column-bg: #000000;
-  --left-column-color: #fca311;
-  --font-color: var(--black);
+  --background: var(--bg);
+  --canvas: var(--bg);
+  --left-column-bg: var(--bg);
+  --left-column-color: var(--text-primary);
+  --left-column-border: 3px solid var(--border-strong);
+  --left-column-font-weight: 400;
+  --font-color: var(--text-primary);
 
   --body-background-image: none;
   --body-background-size: unset;
-  --canvas-wrapper-shadow-display: block;
+  --canvas-wrapper-shadow-display: none;
   --left-headings-font-color: var(--left-column-color);
-  --right-headings-font-color: var(--black);
+  --right-headings-font-color: var(--text-primary);
 
   --night-shadow: var(--neon-pink);
 
-  --night-switch-bg: var(--left-column-bg);
-  --night-switch-color: var(--left-column-color);
+  --night-switch-bg: var(--accent);
+  --night-switch-color: var(--text-on-accent);
 
-  --canvas-shadow: var(--shadow-elevation-medium);
+  --canvas-shadow: none;
 
-  --code-color: var(--left-column-color);
-  --code-background: var(--left-column-bg);
+  --code-color: var(--text-primary);
+  --code-background: var(--gray-100);
+  --code-radius: 0;
 
-  --other-overlay-color: rgba(0, 0, 0, 0.05);
+  --other-overlay-color: var(--gray-100);
+
+  --link-color: var(--accent);
+  --link-hover-color: var(--accent-hover);
+  --contents-border: 3px solid var(--border-strong);
 `;
 
 export const BASE_VARS = `
-  --font: var(--dm-sans-font);
-  --heading-font: var(--dm-serif-display-font);
+  --font: var(--inter-font);
+  --heading-font: var(--inter-tight-font);
 
   --font-size-l: 1.2rem;
   --font-size-s: 1.0rem;
@@ -77,6 +91,22 @@ export const BASE_VARS = `
   --black: #000;
   --neon-blue: #4cc9f0;
   --neon-pink: #f20089;
+
+  --bg: #ffffff;
+  --text-primary: #000000;
+  --border-strong: #000000;
+  --gray-100: #f2f2f2;
+  --gray-300: #d9d9d9;
+  --gray-600: #6b6b6b;
+  --accent: #015def;
+  --accent-hover: #004fcc;
+  --text-on-accent: #ffffff;
+  --yellow: #ffdd19;
+  --red: #ff1f24;
+  --red-shade: #e61b21;
+  --error: var(--red-shade);
+  --warning: var(--yellow);
+  --info: var(--accent);
 
   --shadow-color: 0deg 8% 39%;
   --shadow-elevation-low:
