@@ -1,0 +1,31 @@
+.toc {
+  --toc-bg: var(--big-accent);
+  --toc-color: var(--black);
+  --toc-hr: var(--black);
+
+  display: inline-block;
+  padding: 1em 1em 0.1em;
+  margin-bottom: 1em;
+  background-color: var(--toc-bg);
+  color: var(--toc-color);
+  --link-color: var(--toc-color);
+}
+
+.toc hr {
+  border-color: var(--toc-hr);
+}
+
+:global(.night) .toc {
+  --toc-bg: #1a1a1a;
+  --toc-color: var(--white);
+  --toc-hr: var(--big-accent);
+}
+
+/* Covers the moment before NightSwitch sets the body class */
+@media (prefers-color-scheme: dark) {
+  :global(body:not(.day)) .toc {
+    --toc-bg: #1a1a1a;
+    --toc-color: var(--white);
+    --toc-hr: var(--big-accent);
+  }
+}

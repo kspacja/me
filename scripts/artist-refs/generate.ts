@@ -69,7 +69,7 @@ function refLine(ref: Ref): string {
   return `- [${escapeMdx(ref.listTitle)}](${refUrl(ref)})${detail ? ` — ${detail}` : ""}`;
 }
 
-function buildBlock(artist: Artist, withRule: boolean): string {
+function buildBlock(artist: Artist): string {
   // songwriter refs first, then the rest grouped by list in first-seen order
   const order = new Map<string, number>();
   artist.refs.forEach((r) => order.has(r.list) || order.set(r.list, order.size));
@@ -78,9 +78,8 @@ function buildBlock(artist: Artist, withRule: boolean): string {
       Number(b.role === "songwriter") - Number(a.role === "songwriter") || order.get(a.list)! - order.get(b.list)!
   );
 
-  const lines = [START];
-  if (withRule) lines.push("", "---");
-  lines.push("", "Na listach:", "", ...refs.map(refLine));
+  // same rule as "---", with extra space above
+  const lines = [START, "", "<hr style={{ marginTop: '3em', marginBottom: '1.5em' }} />", "", "<h4>Na listach:</h4>", "", ...refs.map(refLine)];
   if (artist.related?.length) {
     const links = artist.related.map((r) => `[${escapeMdx(r.name)}](/music/artists/${r.slug})`).join(" • ");
     lines.push("", `Zobacz też: ${links}`);
@@ -105,10 +104,10 @@ export default PassThrough;
 function stripLegacyRefs(content: string): string {
   return (
     content
-      // "→ [#8 na liście Najlepszych polskich piosenkopisarzy](...)"
-      .replace(/^→ \[#\d+ na liście Najlepszych polskich piosenkopisarzy\]\([^)]*\)\s*$/m, "")
-      // "---\n\nX w rankingu [najlepszych polskich piosenkopisarzy](...):\n\n- ...\n- ..."
-      .replace(/(?:^---\s*\n+)?^.+ w rankingu \[najlepszych polskich piosenkopisarzy\]\([^)]*\):\s*\n+(?:^- .*\n?)+/m, "")
+      // any standalone "→ [...](/music/lists/...)" line
+      .replace(/^→ \[[^\]]*\]\(\/music\/lists\/[^)]*\)\s*$/gm, "")
+      // "---" + "... [...](/music/lists/...):" intro + its "- ..." list
+      .replace(/(?:^---[ \t]*\n+)?^[^\n]*\]\(\/music\/lists\/[^)]*\)[^\n]*:[ \t]*\n+(?:^- [^\n]*\n?)+/gm, "")
   );
 }
 
@@ -124,12 +123,11 @@ function updatePage(artist: Artist): "created" | "updated" | "unchanged" {
     const start = old.indexOf(START);
     const end = old.indexOf(END);
     const body = (start !== -1 && end !== -1 ? old.slice(0, start) + old.slice(end + END.length) : stripLegacyRefs(old)).trimEnd();
-    const onlyHeading = /^## .+$/.test(body.trim());
-    content = `${body}\n\n${buildBlock(artist, !onlyHeading)}\n`;
+    content = `${body}\n\n${buildBlock(artist)}\n`;
     if (content === old) return "unchanged";
     status = "updated";
   } else {
-    content = `## ${artist.name}\n\n${buildBlock(artist, false)}\n`;
+    content = `## ${artist.name}\n\n${buildBlock(artist)}\n`;
     status = "created";
   }
 

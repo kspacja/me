@@ -134,7 +134,7 @@ h3 {
 }
 
 hr {
-  border: 1px solid var(--text-primary);
+  border: 1px solid var(--big-accent);
   border-width: 0 0 1px 0;
 }
 
