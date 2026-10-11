@@ -75,6 +75,7 @@
   --link-color: var(--text-primary);
   --link-hover-color: var(--accent-hover);
   --contents-border: 3px solid var(--border-strong);
+  --hr-color: var(--big-accent);
 }
 
 html,
@@ -134,7 +135,7 @@ h3 {
 }
 
 hr {
-  border: 1px solid var(--big-accent);
+  border: 1px solid var(--hr-color);
   border-width: 0 0 1px 0;
 }
 
@@ -170,7 +171,7 @@ a.hash-link:hover h5::after,
 a.hash-link:hover h6::after {
   content: " #";
   font-size: 0.8em;
-  opacity: 0.45;
+  opacity: 0.3;
   margin-left: 0.1em;
   position: relative;
   top: -0.1em;
@@ -325,6 +326,7 @@ pre {
     --text-on-accent: var(--black);
     --super-accent: #ff5c5f;
     --super-accent-shade: #ff7a7c;
+    --hr-color: var(--big-accent);
   }
 
   .day {
@@ -357,6 +359,7 @@ pre {
     --text-on-accent: #ffffff;
     --super-accent: #ff1f24;
     --super-accent-shade: #e61b21;
+    --hr-color: var(--super-accent-shade);
   }
 }
 

@@ -159,6 +159,12 @@ function parseRegularList(slug: string, title: string, content: string) {
       section = line.replace(/:\s*$/, "");
       continue;
     }
+    // range headers without a colon: "DO TOP 26 - 40", "TOP 41 - 50", "TOP 30<br/>"
+    const range = line.match(/^((?:DO )?TOP \d+(?:\s*-\s*\d+)?)\s*(?:<br\s*\/?>)?\s*$/i);
+    if (range) {
+      section = range[1];
+      continue;
+    }
 
     const m = line.match(/^(?:-\s*)?(?:ex aequo:?\s*)?(?:(\d+)\.\s+)?(.+)$/i);
     if (!m) continue;
